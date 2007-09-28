@@ -14,6 +14,7 @@ Group:		System/Configuration/Other
 Url:		https://svn.mandriva.com/svn/soft/drakx/trunk/live/draklive-install/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
+Requires:	drakxtools >= 10.4.222-1mdv2008.0
 
 %description
 This tool allows to install Mandriva from a running live system.
