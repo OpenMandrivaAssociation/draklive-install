@@ -1,5 +1,5 @@
 %define name draklive-install
-%define version 0.7
+%define version 0.8
 %define release %mkrel 1
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
