@@ -12,7 +12,6 @@ Source0:	%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		System/Configuration/Other
 Url:		https://svn.mandriva.com/svn/soft/drakx/trunk/live/draklive-install/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
 Requires:	drakxtools >= 10.4.222-1mdv2008.0
 
