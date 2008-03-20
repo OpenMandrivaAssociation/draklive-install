@@ -69,5 +69,5 @@ rm -rf %buildroot
 %_datadir/icons/hicolor/*/apps/%iconname
 %_datadir/libDrakX/pixmaps/MandrivaOne-*.png
 %_sysconfdir/X11/xsetup.d/??%{name}.xsetup
-
-
+%dir %_sysconfdir/%{name}.d
+%dir %_sysconfdir/%{name}.d/sysconfig
