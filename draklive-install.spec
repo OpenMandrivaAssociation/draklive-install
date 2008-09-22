@@ -1,6 +1,6 @@
 %define name draklive-install
-%define version 1.13
-%define release %mkrel 2
+%define version 1.13.1
+%define release %mkrel 1
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -8,7 +8,7 @@ Summary:	Live installer
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.lzma
 License:	GPL
 Group:		System/Configuration/Other
 Url:		https://svn.mandriva.com/svn/soft/drakx/trunk/live/draklive-install/
