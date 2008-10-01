@@ -37,6 +37,13 @@ done
 install -D -m 0755 %name %buildroot/%_sbindir/%name
 install -m 0755 %{name}-lock-storage %buildroot/%_sbindir/
 
+mkdir -p %buildroot%_bindir
+ln -sf consolehelper %buildroot%_bindir/%{name}-lock-storage
+mkdir -p %{buildroot}%{_sysconfdir}/pam.d
+ln -sf mandriva-console-auth %{buildroot}%{_sysconfdir}/pam.d/%{name}-lock-storage
+mkdir -p %{buildroot}%{_sysconfdir}/security/console.apps
+touch %{buildroot}%{_sysconfdir}/security/console.apps/%{name}-lock-storage
+
 mkdir -p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir,%_menudir,%_datadir/libDrakX/pixmaps/,%_datadir/applications,%_datadir/icons/hicolor/{16x16,32x32,48x48}/apps}
 install data/icons/IC-installone-48.png %buildroot%_liconsdir/%iconname
 install data/icons/IC-installone-32.png %buildroot%_iconsdir/%iconname
@@ -67,6 +74,9 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %_sbindir/%name
 %_sbindir/%{name}-lock-storage
+%_bindir/%{name}-lock-storage
+%{_sysconfdir}/pam.d/%{name}-lock-storage
+%{_sysconfdir}/security/console.apps/%{name}-lock-storage
 %_datadir/mdk/desktop/*/*.desktop
 %_datadir/applications/mandriva-draklive-install.desktop
 %_iconsdir/%iconname
