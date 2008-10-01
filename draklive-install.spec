@@ -31,8 +31,8 @@ rm -rf %buildroot
 
 %makeinstall
 
-for d in %_datadir/nautilus/default-desktop %_datadir/apps/kdesktop/DesktopLinks; do
-  install -D -m 0644 %name.desktop %buildroot/$d/%name.desktop
+for product in one flash; do
+  install -D -m 0644 %name.desktop %buildroot%_datadir/mdk/desktop/$product/%name.desktop
 done
 install -D -m 0755 %name %buildroot/%_sbindir/%name
 install -m 0755 %{name}-lock-storage %buildroot/%_sbindir/
@@ -67,8 +67,7 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %_sbindir/%name
 %_sbindir/%{name}-lock-storage
-%_datadir/apps/kdesktop/DesktopLinks/*.desktop
-%_datadir/nautilus/default-desktop/*.desktop
+%_datadir/mdk/desktop/*/*.desktop
 %_datadir/applications/mandriva-draklive-install.desktop
 %_iconsdir/%iconname
 %_liconsdir/%iconname
