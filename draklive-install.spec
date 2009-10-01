@@ -1,6 +1,6 @@
 %define name draklive-install
-%define version 1.18
-%define release %mkrel 2
+%define version 1.19
+%define release %mkrel 1
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -33,7 +33,7 @@ rm -rf %buildroot
 %makeinstall
 
 for product in one flash; do
-  install -D -m 0644 %name.desktop %buildroot%_datadir/mdk/desktop/$product/%name.desktop
+  install -D -m 0755 %name.desktop %buildroot%_datadir/mdk/desktop/$product/%name.desktop
 done
 install -D -m 0755 %name %buildroot/%_sbindir/%name
 install -m 0755 %{name}-lock-storage %buildroot/%_sbindir/
