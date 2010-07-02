@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.29
-%define release %mkrel 1
+%define release %mkrel 2
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -43,7 +43,12 @@ ln -sf consolehelper %buildroot%_bindir/%{name}-lock-storage
 mkdir -p %{buildroot}%{_sysconfdir}/pam.d
 ln -sf mandriva-console-auth %{buildroot}%{_sysconfdir}/pam.d/%{name}-lock-storage
 mkdir -p %{buildroot}%{_sysconfdir}/security/console.apps
-touch %{buildroot}%{_sysconfdir}/security/console.apps/%{name}-lock-storage
+cat > %{buildroot}%{_sysconfdir}/security/console.apps/%{name}-lock-storage <<EOF
+USER=<user>
+PROGRAM=/usr/sbin/%{name}-lock-storage
+FALLBACK=false
+SESSION=true
+EOF
 
 mkdir -p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir,%_menudir,%_datadir/libDrakX/pixmaps/,%_datadir/applications,%_datadir/icons/hicolor/{16x16,32x32,48x48}/apps}
 install data/icons/IC-installone-48.png %buildroot%_liconsdir/%iconname
