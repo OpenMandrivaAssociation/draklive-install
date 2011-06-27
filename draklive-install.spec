@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.30
-%define release %mkrel 2
+%define release %mkrel 3
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -9,6 +9,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	%{name}-%{version}.tar.lzma
+Source1:        minsysreqs
 License:	GPL
 Group:		System/Configuration/Other
 Url:		https://svn.mandriva.com/svn/soft/drakx/trunk/live/draklive-install/
@@ -17,12 +18,14 @@ BuildArch:      noarch
 Requires:	drakxtools >= 13.32
 Requires:	drakx-installer-matchbox
 BuildRequires:	intltool
+Patch0: draklive-install-sysreq.patch
 
 %description
 This tool allows to install Mandriva from a running live system.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %make
@@ -60,7 +63,7 @@ cp -l %buildroot%_liconsdir/%iconname %buildroot%_datadir/icons/hicolor/16x16/ap
 install data/icons/MandrivaOne-*.png %buildroot%_datadir/libDrakX/pixmaps/
 install mandriva-draklive-install.desktop %buildroot%_datadir/applications/
 install -D -m 0755 %{name}.xsetup %buildroot%_sysconfdir/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
-
+install -m 0755 %SOURCE1 %buildroot%_sysconfdir/
 %find_lang %name
 
 %if %mdkversion < 200900
@@ -91,5 +94,6 @@ rm -rf %buildroot
 %_datadir/icons/hicolor/*/apps/%iconname
 %_datadir/libDrakX/pixmaps/MandrivaOne-*.png
 %_sysconfdir/X11/xsetup.d/??%{name}.xsetup
+%_sysconfdir/minsysreqs
 %dir %_sysconfdir/%{name}.d
 %dir %_sysconfdir/%{name}.d/sysconfig
