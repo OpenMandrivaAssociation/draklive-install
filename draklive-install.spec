@@ -1,6 +1,6 @@
 %define name draklive-install
-%define version 1.30
-%define release %mkrel 3
+%define version 1.31
+%define release %mkrel 1
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -15,17 +15,15 @@ Group:		System/Configuration/Other
 Url:		https://svn.mandriva.com/svn/soft/drakx/trunk/live/draklive-install/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
-Requires:	drakxtools >= 13.32
+Requires:	drakxtools >= 13.51
 Requires:	drakx-installer-matchbox
 BuildRequires:	intltool
-Patch0: draklive-install-sysreq.patch
 
 %description
 This tool allows to install Mandriva from a running live system.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %make
