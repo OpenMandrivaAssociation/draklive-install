@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.31
-%define release %mkrel 2
+%define release %mkrel 3
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -18,12 +18,14 @@ BuildArch:      noarch
 Requires:	drakxtools >= 13.51
 Requires:	drakx-installer-matchbox
 BuildRequires:	intltool
+Patch0: draklive-install.time_fix.patch
 
 %description
 This tool allows to install Mandriva from a running live system.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %make
