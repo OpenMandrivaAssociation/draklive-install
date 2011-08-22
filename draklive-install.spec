@@ -64,7 +64,6 @@ cp -l %buildroot%_liconsdir/%iconname %buildroot%_datadir/icons/hicolor/16x16/ap
 install data/icons/MandrivaOne-*.png %buildroot%_datadir/libDrakX/pixmaps/
 install mandriva-draklive-install.desktop %buildroot%_datadir/applications/
 install -D -m 0755 %{name}.xsetup %buildroot%_sysconfdir/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
-install -m 0755 %SOURCE1 %buildroot%_sysconfdir/
 %find_lang %name
 
 %if %mdkversion < 200900
