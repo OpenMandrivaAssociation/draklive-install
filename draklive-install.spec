@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.31
-%define release %mkrel 9
+%define release %mkrel 10
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -20,6 +20,7 @@ BuildRequires:	intltool
 Patch0: draklive-install-1.31.checksize.patch
 Patch1: draklive-install.disablepowersave.patch
 Patch2: draklive-install-1.31.imagerotate.patch
+Patch3: draklive-install-1.31.ru.locale.patch
 
 %description
 This tool allows to install Mandriva from a running live system.
@@ -28,6 +29,7 @@ This tool allows to install Mandriva from a running live system.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch3 -p1
 
 %build
 %make
