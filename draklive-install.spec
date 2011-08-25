@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.31
-%define release %mkrel 8
+%define release %mkrel 9
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -19,6 +19,7 @@ Requires:	drakx-installer-matchbox
 BuildRequires:	intltool
 Patch0: draklive-install-1.31.checksize.patch
 Patch1: draklive-install.disablepowersave.patch
+Patch2: draklive-install-1.31.imagerotate.patch
 
 %description
 This tool allows to install Mandriva from a running live system.
@@ -54,7 +55,7 @@ FALLBACK=false
 SESSION=true
 EOF
 
-mkdir -p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir,%_menudir,%_datadir/libDrakX/pixmaps/,%_datadir/applications,%_datadir/icons/hicolor/{16x16,32x32,48x48}/apps}
+mkdir -p %buildroot{%_miconsdir,%_iconsdir,%_liconsdir,%_menudir,%_datadir/libDrakX/pixmaps/,%_datadir/libDrakX/advert/,%_datadir/applications,%_datadir/icons/hicolor/{16x16,32x32,48x48}/apps}
 install data/icons/IC-installone-48.png %buildroot%_liconsdir/%iconname
 install data/icons/IC-installone-32.png %buildroot%_iconsdir/%iconname
 install data/icons/IC-installone-16.png %buildroot%_miconsdir/%iconname
@@ -62,6 +63,7 @@ cp -l %buildroot%_liconsdir/%iconname %buildroot%_datadir/icons/hicolor/48x48/ap
 cp -l %buildroot%_liconsdir/%iconname %buildroot%_datadir/icons/hicolor/32x32/apps/%iconname
 cp -l %buildroot%_liconsdir/%iconname %buildroot%_datadir/icons/hicolor/16x16/apps/%iconname
 install data/icons/MandrivaOne-*.png %buildroot%_datadir/libDrakX/pixmaps/
+install data/advert/* %buildroot%_datadir/libDrakX/advert/
 install mandriva-draklive-install.desktop %buildroot%_datadir/applications/
 install -D -m 0755 %{name}.xsetup %buildroot%_sysconfdir/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 %find_lang %name
@@ -93,6 +95,7 @@ rm -rf %buildroot
 %_miconsdir/%iconname
 %_datadir/icons/hicolor/*/apps/%iconname
 %_datadir/libDrakX/pixmaps/MandrivaOne-*.png
+%_datadir/libDrakX/advert/*
 %_sysconfdir/X11/xsetup.d/??%{name}.xsetup
 %dir %_sysconfdir/%{name}.d
 %dir %_sysconfdir/%{name}.d/sysconfig
