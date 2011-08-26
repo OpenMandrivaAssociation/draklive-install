@@ -1,6 +1,6 @@
 %define name draklive-install
 %define version 1.31
-%define release %mkrel 10
+%define release %mkrel 11
 %define iconname MandrivaOne-install-icon.png
 %define xsetup_level 60
 
@@ -29,6 +29,7 @@ This tool allows to install Mandriva from a running live system.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 %patch3 -p1
 
 %build
