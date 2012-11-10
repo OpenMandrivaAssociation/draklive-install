@@ -1,0 +1,122 @@
+diff -ur draklive-install-1.31.old/draklive-install draklive-install-1.31/draklive-install
+--- draklive-install-1.31.old/draklive-install	2011-08-10 10:46:34.000000000 +0400
++++ draklive-install-1.31/draklive-install	2011-08-19 14:16:40.000000000 +0400
+@@ -19,6 +19,7 @@
+ use MDK::Common;
+ use common;
+ use feature qw(state);
++use File::Copy;
+ 
+ ($::real_windowwidth, $::real_windowheight) = (600, 400);
+ 
+@@ -72,6 +73,7 @@
+     copy_root($in, $copy_source);
+     complete_install($in, $all_hds);
+     setup_bootloader($in, $all_hds, $fstab);
++    setup_initrd($in);
+     finish_installation($fstab);
+     display_end_message($in);
+     $in->exit(0);
+@@ -179,7 +181,7 @@
+     fs::any::check_hds_boot_and_root($all_hds, $fstab);
+     fs::partitioning::choose_partitions_to_format($in, $fstab);
+ 
+-    my $total = get_total_size($in, $copy_source);
++    my $total = get_live_system_size();
+     my $available = fs::any::getAvailableSpace($fstab, 'skip_mounted');
+     die N("Not enough space available (%s available while %s are needed)",
+           formatXiB($available), formatXiB($total)) . "\n"
+@@ -210,27 +212,20 @@
+ sub build_copy_command {
+     my ($source, $dest) = @_;
+     join(' ',
+-         'tar', 'c', '--one-file-system', '-C', $source, '.',
+-         '|',
+-         'tar', 'xvv', '-C', $dest,
++	'tar', 'c', '--one-file-system',
++	'-C', $source, '.',
++	'|',
++	'tar', 'xvv', '-C', $dest,
+      );
+ }
+ 
+-sub get_total_size {
+-    my ($in, $source) = @_;
+-    state %total;
+-    return $total{$source} if $total{$source};
+-    my $_wait = $in->wait_message('', N("Computing total size"));
+-    $total{$source} = first(split(/\s+/, `du -sbx $source 2>/dev/null`));
+-}
+-
+ sub sync_logs() {
+     cp_af('/var/log', $::prefix . '/var');
+ }
+ 
+ sub copy_root {
+     my ($in, $copy_source) = @_;
+-    my $total = get_total_size($in, $copy_source);
++    my $total = get_live_system_size();
+ 
+     my ($wait, $update_progress) = copying_message_with_progress_bar($in, N("Copying in progress"));
+     open(my $OUTPUT, '-|', build_copy_command($copy_source, $::prefix));
+@@ -240,7 +235,7 @@
+         while (<$OUTPUT>) {
+             (undef, undef, my $size) = split;
+             $current += $size;
+-            if ($current <= $total && $current/$total > $previous/$total + 0.001) {
++            if ($current <= $total && $current/$total > $previous/$total + 0.005) {
+                 $update_progress->('', $current, $total);
+                 $previous = $current;
+             }
+@@ -278,6 +273,8 @@
+ 
+     #- FIXME: maybe factorize with draklive, using draklive --clean-chroot ?
+     #- remove unwanted files and packages
++#	$in->ask_okcancel('', N("live_user and live_user_desktop"));	
++
+     my $live_user = chomp_(cat_('/etc/draklive-install.d/user'));
+     my $live_user_desktop = $live_user && chomp_(run_program::rooted_get_stdout($::prefix, "su - $live_user -c 'xdg-user-dir DESKTOP'"));
+     unlink(map { $::prefix . $_ } '/.autofsck',
+@@ -321,6 +318,7 @@
+     require services;
+     services::start_service_on_boot($_) foreach chomp_(cat_('/etc/draklive-install.d/services'));
+ 
++
+     sync_logs();
+ }
+ 
+@@ -334,6 +332,25 @@
+     sync_logs();
+ }
+ 
++sub setup_initrd {
++	my ($in, $live_media) = @_;
++	# use universal initrd image from the DVD
++   	my $src_file = '/run/initramfs/live/isolinux/initrd0.img';
++	my $dst_file = $::prefix.'/boot/initrd.img';
++
++    my $_wait = $in->wait_message('Bootloader', N("Please wait while initrd is prepared"));
++	# if initrd image has been created before by accident, remove it
++	if (-e $dst_file) { unlink $dst_file; }
++	# copy universal initrd file into /boot directory
++	if (!copy($src_file, $dst_file)) {
++		# something went wrong...
++		$in->ask_warn(N("Error"), N("Unable to copy initrd.img  to new /boot directory"));
++		$in->exit(1);
++	} else {
++		$_wait = N("initrd.img has been created");
++	}
++}
++
+ sub clean_live_system_hds() {
+     #- clean fstab and harddrake config in the live system
+     #- since partitions UUIDs of the installed system have been modified
+@@ -357,7 +374,7 @@
+ sub display_end_message {
+     my ($in) = @_;
+     $::Wizard_finished = 1;
+-    $in->ask_okcancel(N("Congratulations"), N("Installation successfully completed. Remove installation media after reboot."));
++    $in->ask_okcancel(N("Congratulations"), N("Please halt your computer, remove your live system, and restart your computer."));
+ }
+ 
+ ###

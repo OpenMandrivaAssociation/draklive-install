@@ -1,0 +1,325 @@
+diff -ur draklive-install-1.31.old/po/ru.po draklive-install-1.31/po/ru.po
+--- draklive-install-1.31.old/po/ru.po	2011-08-10 10:03:35.000000000 +0200
++++ draklive-install-1.31/po/ru.po	2011-08-25 23:50:45.000000000 +0200
+@@ -4,10 +4,13 @@
+ # Alice Lafox <alice@lafox.com.ua>, 2003.
+ # Alice Lafox <alice@lafox.net>, 2004, 2005.
+ #
++# RosaDesktop
++# Dronova Julia <juliette.tux@gmail.com>, 2011.
++# 
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: draklive-install\n"
+-"POT-Creation-Date: 2011-08-10 10:54+0400\n"
++"POT-Creation-Date: 2011-08-25 22:56+0200\n"
+ "PO-Revision-Date: 2008-03-21 02:52+0200\n"
+ "Last-Translator: Pavel Maryanov <acid_jack@ukr.net>\n"
+ "Language-Team: Russian <gnu@mx.ru>\n"
+@@ -18,89 +21,102 @@
+ "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+ "X-Language: ru_RU\n"
+ 
+-#: ../draklive-install:105
++#: ../draklive-install:107
+ #, c-format
+ msgid "Mandriva Live"
+ msgstr "Mandriva Live"
+ 
+-#: ../draklive-install:109
++#: ../draklive-install:111
+ #, c-format
+ msgid "This wizard will help you to install the live distribution."
+-msgstr "Этот мастер поможет вам установить live-дистрибутив."
++msgstr "Этот мастер поможет вам установить дистрибутив."
+ 
+-#: ../draklive-install:135 ../draklive-install:206 ../draklive-install:274
++#: ../draklive-install:137 ../draklive-install:208 ../draklive-install:281
+ #, c-format
+ msgid "Please wait"
+ msgstr "Подождите, пожалуйста"
+ 
+-#: ../draklive-install:156 ../draklive-install:168 ../draklive-install:252
++#: ../draklive-install:158 ../draklive-install:170 ../draklive-install:259
++#: ../draklive-install:359
+ #, c-format
+ msgid "Error"
+ msgstr "Ошибка"
+ 
+-#: ../draklive-install:168
++#: ../draklive-install:170
+ #, c-format
+ msgid "An error occurred"
+ msgstr "Произошла ошибка"
+ 
+-#: ../draklive-install:184
++#: ../draklive-install:186
+ #, c-format
+ msgid "Not enough space available (%s available while %s are needed)"
+ msgstr "Недостаточно свободного места (доступно — %s, нужно — %s)"
+ 
+-#: ../draklive-install:223
+-#, c-format
+-msgid "Computing total size"
+-msgstr "Вычисляется общий размер"
+-
+-#: ../draklive-install:235 ../draklive-install:410
++#: ../draklive-install:233 ../draklive-install:439
+ #, c-format
+ msgid "Copying in progress"
+ msgstr "Выполняется копирование"
+ 
+-#: ../draklive-install:252
++#: ../draklive-install:259
+ #, c-format
+ msgid "Unable to copy files to new root"
+-msgstr "Не удаётся скопировать файлы в новый корень"
++msgstr "Не удаётся скопировать файлы в новый корневой каталог"
++
++#: ../draklive-install:353
++#, c-format
++msgid "Please wait while initrd is prepared"
++msgstr "Пожалуйста подождите, выполняется подготовка initrd"
++
++#: ../draklive-install:359
++#, c-format
++msgid "Unable to copy initrd.img  to new /boot directory"
++msgstr "Не удаётся скопировать initrd.img в новый каталог /boot"
++
++#: ../draklive-install:362
++#, c-format
++msgid "initrd.img has been created"
++msgstr "initrd.img был создан"
+ 
+-#: ../draklive-install:360
++#: ../draklive-install:389
+ #, c-format
+ msgid "Congratulations"
+ msgstr "Поздравляем"
+ 
+-#: ../draklive-install:360
++#: ../draklive-install:389
+ #, c-format
+ msgid ""
+-"Installation successfully completed. Remove installation media after reboot."
+-msgstr "Установка успешно завершена. Удалите установочный носитель после перезагрузки."
++"Please halt your computer, remove your live system, and restart your "
++"computer."
++msgstr ""
++"Перезагрузите компьютер, удалите носитель с live-системой и загрузитесь с жёсткого диска."
+ 
+-#: ../draklive-install:375
++#: ../draklive-install:404
+ #, c-format
+ msgid "Continue anyway?"
+ msgstr "Всё равно продолжить?"
+ 
+-#: ../draklive-install:380
++#: ../draklive-install:409
+ #, c-format
+ msgid "Quit without saving"
+ msgstr "Выйти без сохранения"
+ 
+-#: ../draklive-install:380
++#: ../draklive-install:409
+ #, c-format
+ msgid "Quit without writing the partition table?"
+ msgstr "Выйти без записи таблицы разделов?"
+ 
+-#: ../draklive-install:386
++#: ../draklive-install:415
+ #, c-format
+ msgid "Do you want to save /etc/fstab modifications"
+ msgstr "Хотите сохранить изменения в /etc/fstab?"
+ 
+-#: ../draklive-install:393
++#: ../draklive-install:422
+ #, c-format
+ msgid "You need to reboot for the partition table modifications to take place"
+ msgstr ""
+-"Вам нужно перезагрузиться, чтобы изменения таблицы разделов вступили в силу"
++"Чтобы применить изменения в таблице разделов, перезагрузите компьютер"
+ 
+-#: ../draklive-install:398
++#: ../draklive-install:427
+ #, c-format
+ msgid ""
+ "You should format partition %s.\n"
+@@ -113,45 +129,49 @@
+ 
+ #: ../mandriva-draklive-install.desktop.in.h:1
+ msgid "Install your Mandriva live system to disk"
+-msgstr "Установить Mandriva LiveCD на жёсткий диск"
++msgstr "Установить дистрибутив на жёсткий диск"
+ 
+ #: ../mandriva-draklive-install.desktop.in.h:2
+ msgid "Live Install"
+-msgstr "Установщик LiveCD/DVD"
++msgstr "Установщик в режиме Live"
+ 
+ #: ../draklive-install.desktop.in.h:1
+ msgid "Install on Hard Disk"
+ msgstr "Установка на жесткий диск"
+ 
++#~ msgid "Computing total size"
++#~ msgstr "Вычисляется общий размер"
++
+ #~ msgid ""
+-#~ "Please halt your computer, remove your live system, and restart your "
+-#~ "computer."
++#~ "Installation successfully completed. Remove installation media after "
++#~ "reboot."
+ #~ msgstr ""
+-#~ "Выключите компьютер, удалите свою live-систему и перезапустите компьютер."
++#~ "Установка успешно завершена. Удалите установочный носитель после "
++#~ "перезагрузки."
+ 
+ #~ msgid "Choose the partitions you want to format"
+ #~ msgstr "Выберите разделы, которые вы хотите отформатировать"
+ 
+ #~ msgid "Check bad blocks?"
+-#~ msgstr "Проверить плохие блоки?"
++#~ msgstr "Проверить на сбойные блоки?"
+ 
+ #~ msgid ""
+ #~ "Failed to check filesystem %s. Do you want to repair the errors? (beware, "
+ #~ "you can lose data)"
+ #~ msgstr ""
+-#~ "Проверка файловой системы %s завершилась неудачей. Хотите исправить "
++#~ "Сбой проверки файловой системы %s. Хотите исправить "
+ #~ "ошибки (осторожно, вы можете потерять данные)?"
+ 
+ #~ msgid "Not enough swap space to fulfill installation, please add some"
+ #~ msgstr ""
+-#~ "Не хватает swap-пространства для завершения установки. Пожалуйста, "
++#~ "Размер файла подкачки недостаточен для завершения установки. Пожалуйста, "
+ #~ "увеличьте немного его размер."
+ 
+ #~ msgid "No partition available"
+-#~ msgstr "Разделы не доступны"
++#~ msgstr "Нет доступных разделов"
+ 
+ #~ msgid "Scanning partitions to find mount points"
+-#~ msgstr "Выполняется проверка разделов на наличие точек монтирования"
++#~ msgstr "Проверяю разделы на наличие точек монтирования"
+ 
+ #~ msgid "Choose the mount points"
+ #~ msgstr "Выберите точки монтирования"
+@@ -168,7 +188,7 @@
+ #~ msgstr ""
+ #~ "Для некоторых устройств вашего компьютере для нормальной их работы\n"
+ #~ "необходимы \"проприетарные\" драйверы.\n"
+-#~ "Вы можете найти различную информацию о них на: %s"
++#~ "Вы можете найти некоторую информацию о них на: %s"
+ 
+ #~ msgid ""
+ #~ "You must have a root partition.\n"
+@@ -177,19 +197,19 @@
+ #~ msgstr ""
+ #~ "У вас должен быть корневой раздел.\n"
+ #~ "Для этого создайте раздел (или выберите уже существующий).\n"
+-#~ "Затем выберите действие \"Точка монтирования\" и установите ее в `/'"
++#~ "Затем выберите действие \"Точка монтирования\" и установите ее значение в `/'"
+ 
+ #~ msgid ""
+ #~ "You do not have a swap partition.\n"
+ #~ "\n"
+ #~ "Continue anyway?"
+ #~ msgstr ""
+-#~ "У вас отсутствует раздел для свопинга\n"
++#~ "У вас отсутствует раздел подкачки\n"
+ #~ "\n"
+ #~ "Хотите продолжить?"
+ 
+ #~ msgid "You must have a FAT partition mounted in /boot/efi"
+-#~ msgstr "У вас должен быть раздел FAT, примонтированный на /boot/efi"
++#~ msgstr "У вас должен быть раздел FAT, смонтированный на /boot/efi"
+ 
+ #~ msgid "Use free space"
+ #~ msgstr "Использовать свободное пространство"
+@@ -216,7 +236,7 @@
+ #~ msgstr "Размер корневого раздела в MB: "
+ 
+ #~ msgid "Swap partition size in MB: "
+-#~ msgstr "Размер раздела для свопинга в MB: "
++#~ msgstr "Размер раздела подкачки в MB: "
+ 
+ #~ msgid ""
+ #~ "There is no FAT partition to use as loopback (or not enough space left)"
+@@ -238,7 +258,7 @@
+ #~ "Возникла следующая ошибка: %s"
+ 
+ #~ msgid "Resizing"
+-#~ msgstr "Изменение размера"
++#~ msgstr "Изменяю размер"
+ 
+ #~ msgid "Computing the size of the Windows partition"
+ #~ msgstr "Вычисляется размер раздела Windows"
+@@ -248,7 +268,7 @@
+ #~ "under Windows, run the ``defrag'' utility, then restart the Mandriva "
+ #~ "Linux installation."
+ #~ msgstr ""
+-#~ "Ваш раздел Windows слишком фрагментирован. Перезагрузите компьютер под "
++#~ "Раздел Windows слишком фрагментирован. Загрузитесь в "
+ #~ "Windows, запустите утилиту \"defrag\", а затем повторно запустите "
+ #~ "установку Mandriva Linux."
+ 
+@@ -266,10 +286,10 @@
+ #~ msgstr ""
+ #~ "ПРЕДУПРЕЖДЕНИЕ!\n"
+ #~ "\n"
+-#~ "Сейчас DrakX изменит размер вашего раздела Windows. Будьте\n"
+-#~ "осторожны: эта операция опасна. Если вы еще этого не сделали,\n"
+-#~ "вам стоит выйти из инсталляции, запустить \"chkdsk c:\" в\n"
+-#~ "командной строке под Windows (имейте в виду, что запуска \n"
++#~ "Сейчас DrakX изменит размер раздела Windows. Будьте\n"
++#~ "осторожны: эта операция небезопасна. Если вы еще этого не сделали,\n"
++#~ "вам стоит выйти из программы установки, запустить \"chkdsk c:\" в\n"
++#~ "командной строке из Windows (имейте в виду, что запуска \n"
+ #~ "графической программы \"scandisk\" недостаточно, обязательно\n"
+ #~ "запустите \"chkdsk\" в командной строке), по желанию выполнить\n"
+ #~ "дефрагментацию (defrag), затем начать установку снова. \n"
+@@ -277,10 +297,10 @@
+ #~ "Если уверены, нажмите Ok."
+ 
+ #~ msgid "Which size do you want to keep for Windows on"
+-#~ msgstr "Какой объём вы хотите оставить для Windows"
++#~ msgstr "Какой объём вы хотите оставить для Windows на"
+ 
+ #~ msgid "partition %s"
+-#~ msgstr "раздел %s"
++#~ msgstr "разделе %s"
+ 
+ #~ msgid "Resizing Windows partition"
+ #~ msgstr "Изменяется размер раздела Windows"
+@@ -308,11 +328,11 @@
+ #~ msgid ""
+ #~ "You have more than one hard drive, which one do you install linux on?"
+ #~ msgstr ""
+-#~ "У вас есть несколько жёстких дисков. На какой из них вы хотите установить "
++#~ "У вас несколько жёстких дисков. На какой из них вы хотите установить "
+ #~ "Linux?"
+ 
+ #~ msgid "ALL existing partitions and their data will be lost on drive %s"
+-#~ msgstr "ВСЕ существующие разделы и их данные будут потеряны на диске %s"
++#~ msgstr "ВСЕ существующие разделы на диске %s и их данные будут потеряны"
+ 
+ #~ msgid "Custom disk partitioning"
+ #~ msgstr "Ручная разметка диска"
+@@ -334,13 +354,13 @@
+ #~ msgstr "Мастер разметки диска DrakX нашел следующие решения:"
+ 
+ #~ msgid "Partitioning failed: %s"
+-#~ msgstr "Не удалось разметить диск: %s"
++#~ msgstr "Сбой разметки: %s"
+ 
+ #~ msgid "Bringing up the network"
+-#~ msgstr "Поднимается сеть"
++#~ msgstr "Активирую сетевое соединение"
+ 
+ #~ msgid "Bringing down the network"
+-#~ msgstr "Опускается сеть"
++#~ msgstr "Отключаю сетевое соединение"
+ 
+ #~ msgid "none"
+ #~ msgstr "отсутствует"

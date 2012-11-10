@@ -1,0 +1,124 @@
+diff -ur draklive-install-1.31.old/draklive-install draklive-install-1.31/draklive-install
+--- draklive-install-1.31.old/draklive-install	2011-08-24 17:05:09.166846457 +0400
++++ draklive-install-1.31/draklive-install	2011-08-24 16:02:12.000000000 +0400
+@@ -226,8 +226,15 @@
+ sub copy_root {
+     my ($in, $copy_source) = @_;
+     my $total = get_live_system_size();
++    (@process_images) = &get_advert_list(); 
++	my $image_count = scalar(@process_images);
++    my $switch_level = ($image_count > 0 ? $total / ($image_count + 1) : $total) ;
++						# if only one image is set - ignore switching
++    my ($wait, $update_progress, $image) = copying_message_with_progress_bar($in, N("Copying in progress"),
++		"MandrivaOne-advert");
++    my $current_image = 0;	# index of the current image in the @process_images array
++    my $next_level = $switch_level;
+ 
+-    my ($wait, $update_progress) = copying_message_with_progress_bar($in, N("Copying in progress"));
+     open(my $OUTPUT, '-|', build_copy_command($copy_source, $::prefix));
+     {
+         local $_;
+@@ -238,6 +245,11 @@
+             if ($current <= $total && $current/$total > $previous/$total + 0.005) {
+                 $update_progress->('', $current, $total);
+                 $previous = $current;
++		if ($current  >= $next_level) {
++			# change image
++			$next_level += $switch_level;
++			$image->($process_images[$current_image++]);
++		}
+             }
+         }
+     }
+@@ -422,12 +434,11 @@
+ 
+ # forked from interactive::wait_message
+ sub copying_message {
+-    my ($o, $title, $message, $b_temp) = @_;
++    my ($o, $title, $image, $message, $b_temp) = @_;
+ 
+-    my $w = $o->wait_messageW($title, N("Copying in progress"), ugtk2::gtknew('VBox', padding => 5, children_tight => [
+-        ugtk2::gtkcreate_img("MandrivaOne-advert"),
+-        $message,
+-    ]));
++    my $w = $o->wait_messageW($title, N("Copying in progress"), 
++		ugtk2::gtknew('VBox', padding => 5, children_tight => [
++					$image, $message, ]),1);
+     push @tempory::objects, $w if $b_temp;
+     my $b = before_leaving { $o->wait_message_endW($w) };
+ 
+@@ -438,10 +449,11 @@
+ 
+ # forked from interactive::gtk::wait_message_with_progress_bar
+ sub copying_message_with_progress_bar {
+-    my ($in, $o_title) = @_;
++    my ($in, $o_titlei, $start_picture) = @_;
+ 
+     my $progress = Gtk2::ProgressBar->new;
+-    my $w = copying_message($in, $o_title, $progress);
++    my $image = ugtk2::gtkcreate_img($start_picture);
++    my $w = copying_message($in, $o_title, $image, $progress);
+     my $displayed;
+     $progress->signal_connect(expose_event => sub { $displayed = 1; 0 });
+     $w, sub {
+@@ -459,5 +471,59 @@
+ 	} else {
+ 	    $progress->hide if !$total;
+ 	}
+-    };
++	},
++	sub {
++		my ($new_image_file) = @_;
++		$image->set_from_file($new_image_file);
++    	};
++}
++
++#
++# Returns array with files, used to show advertising, while copying is performed
++# Loop counter is also loaded, and to simplify further processing list with filenames
++# is simply multiplied by loop counter (if any)
++#
++# Loop counter is stored in file LOOP in the same directory. It should contain only
++# amount of loops as integer in text format. For example, 2. Loop counter is set to 1
++# by default.
++# 
++sub get_advert_list {
++	my $loop_counter = 1;
++	my @tmp = ();
++	# First we need to form list of the files in the proper directory
++	my $advert_dir = "/usr/share/libDrakX/advert/";
++	if ( ! -d $advert_dir) { print "DIR not found!!!"; return @tmp } ;
++	opendir (ADDIR, $advert_dir) || die "Cannot open $advert_dir!!!";
++	while (defined($filename = readdir(ADDIR))) {
++		if ($filename =~ /^LOOP$/) {
++			# loop counter configuration file has been found! 
++			open (L, $advert_dir.$filename);
++			$line = <L>;
++			close L;
++			($loop_counter) = $line =~ /(\d+)/;			
++		}
++		if ($filename =~ /(png)|(jpg)/) {
++			# file with advertising image has been found
++			# on this step we simply add it to the temporary array
++			push(@tmp,$advert_dir.$filename);
++		}
++	}
++	closedir(ADDIR);	
++
++	# Now we should sort @tmp array to guarantee right sequence when images
++	# are presented to user. Images can have arbitrary filenames, but they 
++	# should be end by sequence suffix -02.png or -3.jpg for example.  
++	@sorted_tmp = sort {
++			($v1) = $a =~ /-(\d+)\./;
++			($v2) = $b =~ /-(\d+)\./;
++			$v1 cmp $v2;
++			} @tmp;
++
++	# Final touch - factor list of images by $loop_counter
++	my @retArray = ();
++	if ($loop_counter == 0) { $loop_counter = 1;}
++	for ( $i = 0; $i < $loop_counter; $i++) {
++		push (@retArray,@sorted_tmp);
++	}
++	return @retArray;
+ }
