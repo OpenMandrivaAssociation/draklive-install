@@ -4,21 +4,21 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.36
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
-Source0:	%{name}-%{version}.tar.xz
+Source0:	%{name}-%{version}-omv1.tar.xz
 BuildArch:      noarch
 BuildRequires:	intltool
 Requires:	drakxtools >= 13.51
 Requires:	drakx-installer-matchbox
 
 %description
-This tool allows to install Rosa from a running live system.
+This tool allows to install OpenMandriva from a running live system.
 
 %prep
-%setup -q
+%setup -q -n %name-%version-omv1
 %apply_patches
 
 %build
@@ -54,12 +54,12 @@ cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolo
 cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{iconname}
 
 #install advert to properties directores
-install data/icons/en/ROSAOne-*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/en/
+install data/icons/en/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/en/
 install data/advert/en/* %{buildroot}%{_datadir}/libDrakX/advert/en/
-install data/icons/ru/ROSAOne-*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/ru/
+install data/icons/ru/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/ru/
 install data/advert/ru/* %{buildroot}%{_datadir}/libDrakX/advert/ru/
 
-install rosa-draklive-install.desktop %{buildroot}%{_datadir}/applications/
+install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %find_lang %{name}
@@ -75,10 +75,10 @@ install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %{_sbindir}/clean_live_hds
 %{_sbindir}/%{name}-lock-storage
 %{_datadir}/mdk/desktop/*/*.desktop
-%{_datadir}/applications/rosa-draklive-install.desktop
+%{_datadir}/applications/openmandriva-draklive-install.desktop
 %{_datadir}/icons/hicolor/*/apps/%{iconname}
-%{_datadir}/libDrakX/pixmaps/en/ROSAOne-*.png
-%{_datadir}/libDrakX/pixmaps/ru/ROSAOne-*.png
+%{_datadir}/libDrakX/pixmaps/en/*.png
+%{_datadir}/libDrakX/pixmaps/ru/*.png
 %{_datadir}/libDrakX/advert/*
 %{_iconsdir}/%{iconname}
 %{_liconsdir}/%{iconname}
