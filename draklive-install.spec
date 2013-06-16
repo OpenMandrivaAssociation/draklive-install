@@ -4,11 +4,11 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.36
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
-Source0:	%{name}-%{version}-omv2.tar.xz
+Source0:	%{name}-%{version}-omv3.tar.xz
 BuildArch:      noarch
 BuildRequires:	intltool
 Requires:	drakxtools >= 13.51
@@ -18,7 +18,7 @@ Requires:	drakx-installer-matchbox
 This tool allows to install OpenMandriva from a running live system.
 
 %prep
-%setup -q -n %name-%version-omv2
+%setup -q -n %name-%version-omv3
 %apply_patches
 
 %build
