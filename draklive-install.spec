@@ -4,11 +4,12 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.36
-Release:	4
+Release:	5
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
 Source0:	%{name}-%{version}-omv3.tar.xz
+Patch1:		draklive-install-1.36-omv3-mcc_boot.patch
 BuildArch:      noarch
 BuildRequires:	intltool
 Requires:	drakxtools >= 13.51
