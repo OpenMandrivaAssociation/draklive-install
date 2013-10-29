@@ -1,0 +1,11 @@
+--- draklive-install-1.36-omv3/draklive-install.xsetup.orig	2013-10-29 10:08:36.470347275 +0000
++++ draklive-install-1.36-omv3/draklive-install.xsetup	2013-10-29 10:08:45.409347746 +0000
+@@ -2,7 +2,7 @@
+ # to be sourced
+ if grep -q '\binstall\b' /proc/cmdline; then
+   /bin/systemctl stop crond.service &
+-  . /etc/sysconfig/i18n
++  . /etc/locale.conf
+   xset -dpms
+   xset s 0 0
+   /usr/sbin/draklive-install
