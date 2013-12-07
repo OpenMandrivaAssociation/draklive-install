@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.36
-Release:	10
+Release:	11
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
