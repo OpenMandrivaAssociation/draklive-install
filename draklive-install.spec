@@ -18,7 +18,7 @@ Requires:	drakxtools >= 13.51
 Requires:	drakx-installer-matchbox
 
 %description
-This tool allows to install OpenMandriva from a running live system.
+This tool allows to install %{distribution} from a running live system.
 
 %prep
 %setup -q -n %name-%version-omv3
