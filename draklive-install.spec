@@ -30,6 +30,7 @@ This tool allows to install %{distribution} from a running live system.
 for product in one flash; do
 	install -D -m 0755 %{name}.desktop %{buildroot}%{_datadir}/mdk/desktop/$product/%{name}.desktop
 done
+
 install -D -m 0755 %{name} %{buildroot}/%{_sbindir}/%{name}
 install -m 0755 %{name}-lock-storage %{buildroot}/%{_sbindir}/
 
@@ -37,6 +38,7 @@ mkdir -p %{buildroot}%{_bindir}
 ln -sf consolehelper %{buildroot}%{_bindir}/%{name}-lock-storage
 mkdir -p %{buildroot}%{_sysconfdir}/pam.d
 ln -sf mandriva-console-auth %{buildroot}%{_sysconfdir}/pam.d/%{name}-lock-storage
+
 mkdir -p %{buildroot}%{_sysconfdir}/security/console.apps
 cat > %{buildroot}%{_sysconfdir}/security/console.apps/%{name}-lock-storage <<EOF
 USER=<user>
@@ -54,10 +56,8 @@ cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolo
 cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{iconname}
 
 #install advert to properties directores
-install data/icons/en/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/en/
-install data/advert/en/* %{buildroot}%{_datadir}/libDrakX/advert/en/
-install data/icons/ru/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/ru/
-install data/advert/ru/* %{buildroot}%{_datadir}/libDrakX/advert/ru/
+install data/icons/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/
+install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
@@ -77,8 +77,7 @@ install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %{_datadir}/mdk/desktop/*/*.desktop
 %{_datadir}/applications/openmandriva-draklive-install.desktop
 %{_datadir}/icons/hicolor/*/apps/%{iconname}
-%{_datadir}/libDrakX/pixmaps/en/*.png
-%{_datadir}/libDrakX/pixmaps/ru/*.png
+%{_datadir}/libDrakX/pixmaps/*.png
 %{_datadir}/libDrakX/advert/*
 %{_iconsdir}/%{iconname}
 %{_liconsdir}/%{iconname}
