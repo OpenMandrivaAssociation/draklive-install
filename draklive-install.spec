@@ -3,16 +3,13 @@
 
 Summary:	Live installer
 Name:		draklive-install
-Version:	1.36
-Release:	11
+Version:	1.37
+Release:	1
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
-Source0:	%{name}-%{version}-omv3.tar.xz
-Patch1:		draklive-install-1.36-omv3-mcc_boot.patch
-Patch2:		draklive-install-1.36-omv3-distro_name.patch
-Patch3:		draklive-install-1.36-omv3-locale.patch
-BuildArch:      noarch
+Source0:	%{name}-%{version}.tar.xz
+BuildArch:	noarch
 BuildRequires:	intltool
 Requires:	drakxtools >= 13.51
 Requires:	drakx-installer-matchbox
@@ -21,7 +18,7 @@ Requires:	drakx-installer-matchbox
 This tool allows to install %{distribution} from a running live system.
 
 %prep
-%setup -q -n %name-%version-omv3
+%setup -q
 %apply_patches
 
 %build
@@ -86,4 +83,3 @@ install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %{_iconsdir}/%{iconname}
 %{_liconsdir}/%{iconname}
 %{_miconsdir}/%{iconname}
-
