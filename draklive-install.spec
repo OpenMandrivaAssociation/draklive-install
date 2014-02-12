@@ -11,7 +11,7 @@ Url:		https://abf.rosalinux.ru/soft/draklive-install
 Source0:	%{name}-%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	intltool
-Requires:	drakxtools >= 13.51
+Requires:	drakxtools >= 14.43
 Requires:	drakx-installer-matchbox
 
 %description
@@ -62,6 +62,7 @@ install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
+
 %find_lang %{name}
 
 %files -f %{name}.lang
