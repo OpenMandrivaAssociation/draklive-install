@@ -4,14 +4,14 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.37
-Release:	3
+Release:	1
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.rosalinux.ru/soft/draklive-install
 Source0:	%{name}-%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	intltool
-Requires:	drakxtools >= 13.51
+Requires:	drakxtools >= 14.43
 Requires:	drakx-installer-matchbox
 
 %description
@@ -62,9 +62,6 @@ install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
-
-# (tpg )HACK - needs to be removed after new drakx release - workaround for bug 450
-sed -i -e 's/mygtk2::enable_quit_popup(1);//' %{buildroot}%{_sbindir}/%{name}
 
 %find_lang %{name}
 
