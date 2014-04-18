@@ -1,10 +1,10 @@
-%define iconname	ROSAOne-install-icon.png
-%define xsetup_level	60
+%define iconname live-install-icon.png
+%define xsetup_level 60
 
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.38
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
