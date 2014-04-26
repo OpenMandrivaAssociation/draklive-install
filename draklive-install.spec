@@ -50,7 +50,7 @@ FALLBACK=false
 SESSION=true
 EOF
 
-mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir},%{_menudir},%{_datadir}/libDrakX/pixmaps/{en,ru},%{_datadir}/libDrakX/advert/{en,ru},%{_datadir}/applications,%{_datadir}/icons/hicolor/{16x16,32x32,48x48}/apps}
+mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir},%{_menudir},%{_datadir}/libDrakX/pixmaps/{en,ru},%{_datadir}/libDrakX/advert/{en,ru},%{_datadir}/applications,%{_datadir}/icons/hicolor/{16x16,32x32,48x48,128x128}/apps}
 install data/icons/live-install-icon-48.png %{buildroot}%{_liconsdir}/live-install-icon.png
 install data/icons/live-install-icon-32.png %{buildroot}%{_iconsdir}/live-install-icon.png
 install data/icons/live-install-icon-16.png %{buildroot}%{_miconsdir}/live-install-icon.png
