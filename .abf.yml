@@ -1,5 +1,5 @@
 removed_sources:
   draklive-install-1.37.tar.xz: 3010bce77d47a4b3b6218079b52c1eccb86f2b7e
-  draklive-install-1.38.tar.xz: 0073b1300f14bbda360dd74f90a726e093580ea8
-sources:
   draklive-install-1.38.tar.xz: 7cadc97e1621e89a1381ed4c8fcd89fec1b29002
+sources:
+  draklive-install-1.38.tar.xz: c93fc797619cb0fab7a4c2004abb9a79e2417f70
