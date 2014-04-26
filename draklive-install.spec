@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.38
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -51,12 +51,13 @@ SESSION=true
 EOF
 
 mkdir -p %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir},%{_menudir},%{_datadir}/libDrakX/pixmaps/{en,ru},%{_datadir}/libDrakX/advert/{en,ru},%{_datadir}/applications,%{_datadir}/icons/hicolor/{16x16,32x32,48x48}/apps}
-install data/icons/IC-installone-48.png %{buildroot}%{_liconsdir}/%{iconname}
-install data/icons/IC-installone-32.png %{buildroot}%{_iconsdir}/%{iconname}
-install data/icons/IC-installone-16.png %{buildroot}%{_miconsdir}/%{iconname}
-cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/%{iconname}
-cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/%{iconname}
-cp -l %{buildroot}%{_liconsdir}/%{iconname} %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/%{iconname}
+install data/icons/live-install-icon-48.png %{buildroot}%{_liconsdir}/live-install-icon.png
+install data/icons/live-install-icon-32.png %{buildroot}%{_iconsdir}/live-install-icon.png
+install data/icons/live-install-icon-16.png %{buildroot}%{_miconsdir}/live-install-icon.png
+install data/icons/live-install-icon-128.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/live-install-icon.png
+cp -l %{buildroot}%{_liconsdir}/live-install-icon.png %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/live-install-icon.png
+cp -l %{buildroot}%{_liconsdir}/live-install-icon.png %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/live-install-icon.png
+cp -l %{buildroot}%{_liconsdir}/live-install-icon.png %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/live-install-icon.png
 
 #install advert to properties directores
 install data/icons/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/
@@ -80,9 +81,9 @@ install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %{_sbindir}/%{name}-lock-storage
 %{_datadir}/mdk/desktop/*/*.desktop
 %{_datadir}/applications/openmandriva-draklive-install.desktop
-%{_datadir}/icons/hicolor/*/apps/%{iconname}
+%{_datadir}/icons/hicolor/*/apps/*.png
 %{_datadir}/libDrakX/pixmaps/*.png
 %{_datadir}/libDrakX/advert/*
-%{_iconsdir}/%{iconname}
-%{_liconsdir}/%{iconname}
-%{_miconsdir}/%{iconname}
+%{_iconsdir}/*.png
+%{_liconsdir}/*.png
+%{_miconsdir}/*.png
