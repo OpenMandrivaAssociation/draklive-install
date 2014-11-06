@@ -4,11 +4,12 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
 Source0:	%{name}-%{version}.tar.xz
+Source1:	60-dracut-isobuild.conf
 BuildArch:	noarch
 BuildRequires:	intltool
 Requires:	drakxtools >= 14.43
@@ -66,6 +67,8 @@ install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
+mkdir -p %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/
+install -m 0644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/60-dracut-isobuild.conf
 
 %find_lang %{name}
 
@@ -75,6 +78,8 @@ install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 %{_sysconfdir}/X11/xsetup.d/??%{name}.xsetup
 %dir %{_sysconfdir}/%{name}.d
 %dir %{_sysconfdir}/%{name}.d/sysconfig
+%dir %{_sysconfdir}/%{name}.d/isobuild
+%{_sysconfdir}/%{name}.d/isobuild/*.conf
 %{_bindir}/%{name}-lock-storage
 %{_sbindir}/%{name}
 %{_sbindir}/clean_live_hds
