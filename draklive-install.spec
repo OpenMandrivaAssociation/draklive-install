@@ -4,19 +4,24 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	4
+Release:	5
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
 Source0:	%{name}-%{version}.tar.xz
 Source1:	60-dracut-isobuild.conf
+Source2:	draklive-install.service
+Source3:	draklive-install-setup
+Source4:	draklive-install-start
 BuildArch:	noarch
 BuildRequires:	intltool
+BuildRequires:	systemd-units
 Requires:	drakxtools >= 14.43
 Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
+Requires(post,postun):	rpm-helper
 
 %description
 This tool allows to install %{distribution} from a running live system.
@@ -65,25 +70,32 @@ install data/icons/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/
 install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
-install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/
 install -m 0644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/60-dracut-isobuild.conf
+
+# (tpg) service files
+mkdir -p %{buildroot}{%{_unitdir},%{_sbindir},%{_datadir}/%{name}}
+install -m 644 %{SOURCE2} %{buildroot}%{_unitdir}/%{name}.service
+install -m 755 %{SOURCE3} %{buildroot}%{_datadir}/%{name}/%{name}-setup
+install -m 755 %{SOURCE4} %{buildroot}%{_sbindir}/%{name}-start
 
 %find_lang %{name}
 
 %files -f %{name}.lang
 %{_sysconfdir}/pam.d/%{name}-lock-storage
 %{_sysconfdir}/security/console.apps/%{name}-lock-storage
-%{_sysconfdir}/X11/xsetup.d/??%{name}.xsetup
 %dir %{_sysconfdir}/%{name}.d
 %dir %{_sysconfdir}/%{name}.d/sysconfig
 %dir %{_sysconfdir}/%{name}.d/isobuild
 %{_sysconfdir}/%{name}.d/isobuild/*.conf
+%{_unitdir}/%{name}.service
 %{_bindir}/%{name}-lock-storage
 %{_sbindir}/%{name}
+%{_sbindir}/%{name}-start
 %{_sbindir}/clean_live_hds
 %{_sbindir}/%{name}-lock-storage
+%{_datadir}/%{name}/%{name}-setup
 %{_datadir}/mdk/desktop/*/*.desktop
 %{_datadir}/applications/openmandriva-draklive-install.desktop
 %{_datadir}/icons/hicolor/*/apps/*.png

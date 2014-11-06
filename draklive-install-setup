@@ -1,0 +1,32 @@
+#!/bin/sh
+
+
+if grep -q '\binstall\b' /proc/cmdline; then
+. /etc/locale.conf
+
+/bin/systemctl stop crond.service &
+
+xset -dpms
+xset s off
+
+/usr/bin/drakx-matchbox-window-manager &
+sleep 1
+
+    if [ "$(pidof drakx-matchbox-window-manager)" ]; then
+	/usr/sbin/draklive-install
+	sleep 1
+    else
+	echo "Can not start draklive-install. Rebooting..."
+	sleep 5
+    fi
+
+# check if we are booted from cd drom to eject it
+blkid /dev/sr0 >/dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+    eject;
+    sleep 10;
+fi
+sync
+reboot
+
+fi

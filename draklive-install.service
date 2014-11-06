@@ -1,0 +1,23 @@
+[Unit]
+Description=Draklive installer
+DefaultDependencies=no
+After=livesys-late.service systemd-user-sessions.service getty@tty1.service plymouth-quit.service
+Conflicts=getty@tty1.service
+Conflicts=display-manager.serivce
+Before=display-manager.serivce
+
+
+[Service]
+Type=simple
+ConditionKernelCommandLine=|install
+ExecStart=/usr/sbin/draklive-install-setup
+ExecReload=/usr/bin/killall X
+ExecStop=/usr/bin/killall X
+StandardInput=null
+StandardOutput=kmsg+console
+StandardError=kmsg+console
+KillMode=process
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
