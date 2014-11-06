@@ -80,7 +80,18 @@ install -m 644 %{SOURCE2} %{buildroot}%{_unitdir}/%{name}.service
 install -m 755 %{SOURCE3} %{buildroot}%{_datadir}/%{name}/%{name}-setup
 install -m 755 %{SOURCE4} %{buildroot}%{_sbindir}/%{name}-start
 
+install -d %{buildroot}%{_presetdir}
+cat > %{buildroot}%{_presetdir}/90-%{name}.preset << EOF
+enable %{name}.service
+EOF
+
 %find_lang %{name}
+
+%post
+%systemd_post %{name}
+
+%postun
+%systemd_postun
 
 %files -f %{name}.lang
 %{_sysconfdir}/pam.d/%{name}-lock-storage
@@ -89,6 +100,7 @@ install -m 755 %{SOURCE4} %{buildroot}%{_sbindir}/%{name}-start
 %dir %{_sysconfdir}/%{name}.d/sysconfig
 %dir %{_sysconfdir}/%{name}.d/isobuild
 %{_sysconfdir}/%{name}.d/isobuild/*.conf
+%{_presetdir}/90-%{name}.preset
 %{_unitdir}/%{name}.service
 %{_bindir}/%{name}-lock-storage
 %{_sbindir}/%{name}
