@@ -10,7 +10,7 @@ Before=display-manager.serivce
 [Service]
 Type=simple
 ConditionKernelCommandLine=|install
-ExecStart=/usr/sbin/draklive-install-setup
+ExecStart=/usr/sbin/draklive-install-start
 ExecReload=/usr/bin/killall X
 ExecStop=/usr/bin/killall X
 StandardInput=null
