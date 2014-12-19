@@ -17,6 +17,8 @@ Requires:	drakx-installer-matchbox
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
 
+Patch0:         draklive-install-EFI-update.patch
+
 %description
 This tool allows to install %{distribution} from a running live system.
 
