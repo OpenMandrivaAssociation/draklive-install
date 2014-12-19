@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	8
+Release:	9
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -16,6 +16,7 @@ BuildArch:	noarch
 BuildRequires:	intltool
 BuildRequires:	systemd-units
 Requires:	drakxtools >= 14.43
+Requires:	drakx-kbd-mouse-x11
 Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
