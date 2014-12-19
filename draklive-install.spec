@@ -4,12 +4,11 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	7
+Release:	8
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
 Source0:	%{name}-%{version}.tar.xz
-Source1:	60-dracut-isobuild.conf
 Source2:	draklive-install.service
 Source3:	draklive-install-setup
 Source4:	draklive-install-start
@@ -71,8 +70,6 @@ install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
-mkdir -p %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/
-install -m 0644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/%{name}.d/isobuild/60-dracut-isobuild.conf
 
 # (tpg) service files
 mkdir -p %{buildroot}{%{_unitdir},%{_sbindir},%{_datadir}/%{name}}
@@ -98,8 +95,6 @@ EOF
 %{_sysconfdir}/security/console.apps/%{name}-lock-storage
 %dir %{_sysconfdir}/%{name}.d
 %dir %{_sysconfdir}/%{name}.d/sysconfig
-%dir %{_sysconfdir}/%{name}.d/isobuild
-%{_sysconfdir}/%{name}.d/isobuild/*.conf
 %{_presetdir}/90-%{name}.preset
 %{_unitdir}/%{name}.service
 %{_bindir}/%{name}-lock-storage
