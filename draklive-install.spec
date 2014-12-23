@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -17,7 +17,7 @@ Requires:	drakx-installer-matchbox
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
 
-Patch0:         draklive-install-EFI-update.patch
+Patch0:		draklive-install-EFI-update.patch
 
 %description
 This tool allows to install %{distribution} from a running live system.
