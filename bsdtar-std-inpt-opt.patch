@@ -1,0 +1,15 @@
+--- draklive-install-1.41/draklive-install~	2014-11-06 18:26:09.000000000 +0000
++++ draklive-install-1.41/draklive-install	2014-12-28 18:28:29.552685170 +0000
+@@ -239,10 +239,10 @@
+     # xz compression:   33:25
+     # So, obviously, it's better to leave it uncompressed.
+     join(' ',
+-	'tar', 'c', '--one-file-system', '--exclude=/etc/localtime','--exclude=/etc/sysconfig/clock',
++	'tar', 'cf -', '--one-file-system', '--exclude=/etc/localtime','--exclude=/etc/sysconfig/clock',
+ 	'-C', $source, '.',
+ 	'|',
+-	'tar', 'xvv', '-C', $dest,
++	'tar', 'xf -', '-C', $dest,
+      );
+ }
+ 
