@@ -23,8 +23,6 @@ Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
-
-Patch0:		draklive-install-EFI-update.patch
 Requires(post,postun):	rpm-helper
 
 %description
@@ -99,6 +97,7 @@ EOF
 %files -f %{name}.lang
 %{_sysconfdir}/pam.d/%{name}-lock-storage
 %{_sysconfdir}/security/console.apps/%{name}-lock-storage
+%{_sysconfdir}/X11/xsetup.d/60draklive-install.xsetup
 %dir %{_sysconfdir}/%{name}.d
 %dir %{_sysconfdir}/%{name}.d/sysconfig
 %{_presetdir}/90-%{name}.preset
