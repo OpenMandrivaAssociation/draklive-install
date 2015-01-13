@@ -23,6 +23,8 @@ Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
+
+Patch0:		draklive-install-EFI-update.patch
 Requires(post,postun):	rpm-helper
 
 %description
@@ -72,6 +74,7 @@ install data/icons/*.png %{buildroot}%{_datadir}/libDrakX/pixmaps/
 install data/advert/* %{buildroot}%{_datadir}/libDrakX/advert/
 
 install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applications/
+install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 
 # (tpg) service files
