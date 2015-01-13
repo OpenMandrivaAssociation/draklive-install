@@ -4,13 +4,18 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	4
+Release:	10
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
 Source0:	%{name}-%{version}.tar.xz
+Source2:	draklive-install.service
+Source3:	draklive-install-setup
+Source4:	draklive-install-start
+Patch01:	bsdtar-std-inpt-opt.patch
 BuildArch:	noarch
 BuildRequires:	intltool
+BuildRequires:	systemd-units
 Requires:	drakxtools >= 14.43
 Requires:	drakx-kbd-mouse-x11
 Requires:	drakx-installer-matchbox
@@ -19,6 +24,7 @@ Requires:	drakx-installer-matchbox
 Requires:	perl(Hal::Cdroms)
 
 Patch0:		draklive-install-EFI-update.patch
+Requires(post,postun):	rpm-helper
 
 %description
 This tool allows to install %{distribution} from a running live system.
@@ -70,18 +76,38 @@ install openmandriva-draklive-install.desktop %{buildroot}%{_datadir}/applicatio
 install -D -m 0755 %{name}.xsetup %{buildroot}%{_sysconfdir}/X11/xsetup.d/%{xsetup_level}%{name}.xsetup
 install -m 0755 clean_live_hds %{buildroot}%{_sbindir}/clean_live_hds
 
+# (tpg) service files
+mkdir -p %{buildroot}{%{_unitdir},%{_sbindir},%{_datadir}/%{name}}
+install -m 644 %{SOURCE2} %{buildroot}%{_unitdir}/%{name}.service
+install -m 755 %{SOURCE3} %{buildroot}%{_datadir}/%{name}/%{name}-setup
+install -m 755 %{SOURCE4} %{buildroot}%{_sbindir}/%{name}-start
+
+install -d %{buildroot}%{_presetdir}
+cat > %{buildroot}%{_presetdir}/90-%{name}.preset << EOF
+enable %{name}.service
+EOF
+
 %find_lang %{name}
+
+%post
+%systemd_post %{name}
+
+%postun
+%systemd_postun
 
 %files -f %{name}.lang
 %{_sysconfdir}/pam.d/%{name}-lock-storage
 %{_sysconfdir}/security/console.apps/%{name}-lock-storage
-%{_sysconfdir}/X11/xsetup.d/??%{name}.xsetup
 %dir %{_sysconfdir}/%{name}.d
 %dir %{_sysconfdir}/%{name}.d/sysconfig
+%{_presetdir}/90-%{name}.preset
+%{_unitdir}/%{name}.service
 %{_bindir}/%{name}-lock-storage
 %{_sbindir}/%{name}
+%{_sbindir}/%{name}-start
 %{_sbindir}/clean_live_hds
 %{_sbindir}/%{name}-lock-storage
+%{_datadir}/%{name}/%{name}-setup
 %{_datadir}/mdk/desktop/*/*.desktop
 %{_datadir}/applications/openmandriva-draklive-install.desktop
 %{_datadir}/icons/hicolor/*/apps/*.png
