@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	11
+Release:	12
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -23,6 +23,7 @@ Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
+Requires:	xinit
 Requires(post,postun):	rpm-helper
 
 %description
