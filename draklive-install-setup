@@ -4,6 +4,11 @@
 if grep -q '\binstall\b' /proc/cmdline; then
 . /etc/locale.conf
 
+# ensure plymouth really has stopped
+    if pgrep "plymouthd" > /dev/null 2>&1; then
+	/bin/plymouth quit
+    fi
+
 /bin/systemctl stop crond.service &
 
 xset -dpms

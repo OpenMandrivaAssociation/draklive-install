@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41
-Release:	13
+Release:	14
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
