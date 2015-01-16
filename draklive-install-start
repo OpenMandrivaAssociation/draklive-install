@@ -3,7 +3,7 @@
 
 if grep -q '\binstall\b' /proc/cmdline; then
     if [ -e /usr/bin/startx ] && [ -e /usr/share/draklive-install/draklive-install-setup ]; then
-	/usr/bin/startx /usr/share/draklive-install/draklive-install-setup $* -- -dpi 96 vt1
+	/usr/bin/startx /usr/share/draklive-install/draklive-install-setup $* -- -dpi 96 vt1 -background none
     else
 	echo "Draklive-install: critical programs are missing, check you system!"
     fi
