@@ -64,7 +64,7 @@
 +	    }
 +        }
 +	# So, first we try to prepare chroot environment by mounting system-related mount points.
-+        if (system('mount --bind /proc /mnt/install/proc && mount --bind /sys /mnt/install/sys && mount -t efivarfs /sys/firmware/efi/efivars /mnt/install/sys/firmware/efi/efivars') != 0) {
++        if (system('mount --bind /proc /mnt/install/proc && mount --bind /sys /mnt/install/sys && if [ -d /sys/firmware/efi/efivars ]; then mount -t efivarfs /sys/firmware/efi/efivars /mnt/install/sys/firmware/efi/efivars; fi') != 0) {
              # Failure, ask what to do now (exit Grub2 installation or try again)
              # Reuse $install_err as user's reply: Yes -> $install_err==1 -> repeat the loop
              # (Would like to use redo here, but it would skip the continue block, and I need it to run)
