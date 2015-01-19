@@ -9,7 +9,7 @@
  	'-C', $source, '.',
  	'|',
 -	'tar', 'xvv', '-C', $dest,
-+	'tar', 'xf -', '-C', $dest,
++	'tar', 'xvvf -', '-C', $dest,
       );
  }
  
