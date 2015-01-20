@@ -12,8 +12,6 @@ Source0:	%{name}-%{version}.tar.xz
 Source2:	draklive-install.service
 Source3:	draklive-install-setup
 Source4:	draklive-install-start
-Patch0:         draklive-install-EFI-update.patch
-Patch1:		bsdtar-std-inpt-opt.patch
 BuildArch:	noarch
 BuildRequires:	intltool
 BuildRequires:	systemd-units
