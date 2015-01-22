@@ -28,8 +28,8 @@ sleep 1
 # check if we are booted from cd drom to eject it
 blkid /dev/sr0 >/dev/null 2>&1
 if [[ $? -eq 0 ]]; then
-    eject;
-    sleep 10;
+    eject
+    sleep 10
 fi
 sync
 reboot
