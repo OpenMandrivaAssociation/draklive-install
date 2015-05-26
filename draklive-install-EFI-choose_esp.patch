@@ -20,7 +20,7 @@
 +       print "Scanning $curr_device\n";
 +     }
 +
-+     if ($boot =~ /boot/ && $type =~ /fat/)
++     if ($boot =~ /esp/ && $type =~ /fat/)
 +     {
 +        push(@potentials, "${curr_device}$num");
 +
