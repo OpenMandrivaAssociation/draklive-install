@@ -1,0 +1,58 @@
+--- draklive-install-1.41.orig/draklive-install	2015-05-26 11:02:10.058468196 +0100
++++ draklive-install-1.41/draklive-install	2015-05-26 11:01:44.420654090 +0100
+@@ -437,6 +437,32 @@
+ 	return 1;
+ }
+ 
++sub find_efi_sys_parts() {
++  my @parts = `parted -lsm  | awk -F: '{print \$1 ":" \$5 ":" \$7}'`;
++
++  my $curr_device = "";
++
++  my @potentials = ();
++
++  foreach $part (@parts)
++  {
++     my ($num, $type, $boot) = split(/:/, $part);
++
++     if ($num =~ /^\/dev/) {
++       $curr_device = $num;
++       print "Scanning $curr_device\n";
++     }
++
++     if ($boot =~ /boot/ && $type =~ /fat/)
++     {
++        push(@potentials, "${curr_device}$num");
++
++     }
++   }
++
++   return @potentials;
++}
++
+ sub setup_bootloader {
+     my ($in, $all_hds, $fstab) = @_;
+ 
+@@ -517,7 +543,21 @@
+         # Now install the Grub2 itself and create menu configuration for it.
+         if ($sys_is_efi == 0) {
+     	    system('umount /run/os-prober/dev/* && mount -t efivarfs /sys/firmware/efi/efivars /mnt/install/sys/firmware/efi/efivars');
+-    	    $install_err = system("chroot /mnt/install /bin/sh -c 'mount -t vfat /dev/sda1 /boot/efi && echo boot=$install_device > /boot/grub2/drakboot.conf && grub2-install $g2arg $install_device && grub2-mkconfig -o /boot/grub2/grub.cfg'");}
++            my @potential_esp = find_efi_sys_parts();
++
++            my $num_esp = @potential_esp;
++
++            my $chosen_esp = "ERROR";
++            if($num_esp == 1)
++            {
++               $chosen_esp = $potential_esp[0];
++            }
++            else
++            {
++               $chosen_esp = $in->ask_from_list("Choose EFI Partition", "Multiple EFI System partitions found", \@potentials);
++            }
++
++    	    $install_err = system("chroot /mnt/install /bin/sh -c 'mount -t vfat $chosen_esp /boot/efi && echo boot=$install_device > /boot/grub2/drakboot.conf && grub2-install $g2arg $install_device && grub2-mkconfig -o /boot/grub2/grub.cfg'");}
+         else {
+     	    $install_err = system("chroot /mnt/install /bin/sh -c 'echo boot=$install_device > /boot/grub2/drakboot.conf && grub2-install $install_device && grub2-mkconfig -o /boot/grub2/grub.cfg'");}
+         if ($install_err != 0) {
