@@ -3,8 +3,8 @@
 
 Summary:	Live installer
 Name:		draklive-install
-Version:	1.41
-Release:	5
+Version:	1.41.1
+Release:	1
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -17,9 +17,6 @@ Requires:	drakx-installer-matchbox
 # even if this package is still named perl-Hal-Cdroms, it's been updated since
 # to use udisks, so please do *NOT* remove...
 Requires:	perl(Hal::Cdroms)
-
-Patch0:		draklive-install-EFI-update.patch
-Patch1:		draklive-install-EFI-choose_esp.patch
 
 %description
 This tool allows to install %{distribution} from a running live system.
