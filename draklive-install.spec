@@ -3,7 +3,7 @@
 
 Summary:	Live installer
 Name:		draklive-install
-Version:	1.41.1
+Version:	1.41.2
 Release:	1
 License:	GPLv2
 Group:		System/Configuration/Other
