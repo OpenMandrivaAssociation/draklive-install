@@ -4,7 +4,7 @@
 Summary:	Live installer
 Name:		draklive-install
 Version:	1.41.4
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Configuration/Other
 Url:		https://abf.io/omv_software/draklive-install
@@ -14,9 +14,6 @@ BuildRequires:	intltool
 Requires:	drakxtools >= 14.43
 Requires:	drakx-kbd-mouse-x11
 Requires:	drakx-installer-matchbox
-# even if this package is still named perl-Hal-Cdroms, it's been updated since
-# to use udisks, so please do *NOT* remove...
-Requires:	perl(Hal::Cdroms)
 
 %description
 This tool allows to install %{distribution} from a running live system.
