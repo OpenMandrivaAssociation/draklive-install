@@ -1,0 +1,32 @@
+draklive-install-1.35
+- fix fsminimal root
+- Forgot to update release number
+- Fixed pre-reboot message dialog being modal
+- Support for VNC installation
+- Switched to Grub2
+- stop cron only in install mode
+
+draklive-install-1.34
+- switch lock storage to udisk
+- fix sync/umount patch and add clean script (clean_live_hds)
+- add fix patch for background darker over install
+- fix unmout function in xsetup
+- stop crond befor drakliv-install run
+
+draklive-install-1.33.11
+- added experimental solution for flash install
+
+draklive-install-1.33
+- show advert on two language - ru and en
+- remove welcome install screen on non-live mode
+- add check for initrd.img copyng with non-zero size
+
+draklive-install-1.32
+
+- add background picture
+- add rosa icons
+- add checksize and new initrd find mechanism
+- disable powersave during install
+- fix russian locale
+- add imagerote on install
+- delete only not needing locales during install

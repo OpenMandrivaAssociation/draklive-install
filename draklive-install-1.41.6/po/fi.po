@@ -1,0 +1,258 @@
+# draklive-install-fi - Finnish Translation
+#
+# Copyright (C) 2002,2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2002 ROSA
+#
+#
+# Matias Griese <mahagr@utu.fi>, 2001.
+# Taisto Kuikka <69319@batman.jypoly.fi>, 2003,2004.
+# Esa Linna <denzo@mbnet.fi>, 2004.
+# Thomas Backlund <tmb@mandrake.org>, 2002, 2003, 2004, 2005.
+# Thomas Backlund <tmb@mandriva.org>, 2006.
+# Anssi Hannula <anssi@mandriva.org>, 2008.
+# Jani Välimaa <wally@mandriva.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: draklive-install\n"
+"POT-Creation-Date: 2014-03-19 20:25+0400\n"
+"PO-Revision-Date: 2010-04-03 09:01+0200\n"
+"Last-Translator: Jani Välimaa <wally@mandriva.org>\n"
+"Language-Team: Finnish <cooker-i18n@mandrivalinux.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../draklive-install:84 ../draklive-install:219 ../draklive-install:315
+#: ../draklive-install:396
+#, c-format
+msgid "Please wait"
+msgstr "Odota hetki"
+
+#: ../draklive-install:122 ../draklive-install:132 ../draklive-install:241
+#: ../draklive-install:257 ../draklive-install:374 ../draklive-install:626
+#: ../draklive-install:638 ../draklive-install:670
+#, c-format
+msgid "Error"
+msgstr "Virhe"
+
+#: ../draklive-install:122
+#, c-format
+msgid "Failed to launch post-install setup. It will be started on next boot."
+msgstr ""
+
+#: ../draklive-install:132
+#, c-format
+msgid ""
+"Failed to prepare chroot for post-install setup. Post-install will be "
+"started on next boot."
+msgstr ""
+
+#: ../draklive-install:185
+#, c-format
+msgid "OpenMandriva Lx Live"
+msgstr "OpenMandriva Lx Live"
+
+#: ../draklive-install:193
+#, c-format
+msgid "This wizard will help you to install the live distribution."
+msgstr "Tämä velho auttaa Live-jakelun asentamisessa."
+
+#: ../draklive-install:257
+#, c-format
+msgid "An error occurred"
+msgstr "Ilmeni virhe"
+
+#: ../draklive-install:293
+#, c-format
+msgid "Not enough space available (%s available while %s are needed)"
+msgstr "Vapaata levytilaa ei ole riittävästi (%s käytettävissä, tarvitaan %s)"
+
+#: ../draklive-install:348 ../draklive-install:779
+#, c-format
+msgid "Copying in progress"
+msgstr "Kopiointi käynnissä"
+
+#: ../draklive-install:374
+#, c-format
+msgid "Unable to copy files to new root"
+msgstr "Tiedostoja ei voida kopioida uuteen juureen"
+
+#: ../draklive-install:472
+#, c-format
+msgid " Mb\n"
+msgstr ""
+
+#: ../draklive-install:476
+#, c-format
+msgid " Gb\n"
+msgstr ""
+
+#: ../draklive-install:588
+#, c-format
+msgid "Bootloader main options"
+msgstr "Käynnistyslataimen asetukset"
+
+#: ../draklive-install:591 ../draklive-install:601
+#, c-format
+msgid "Bootloader"
+msgstr "Käynnistyslatain"
+
+#: ../draklive-install:592
+#, c-format
+msgid "Boot device"
+msgstr "Käynnistyslaite"
+
+#: ../draklive-install:594
+#, c-format
+msgid "Main options"
+msgstr "Asetukset"
+
+#: ../draklive-install:595
+#, c-format
+msgid "Delay before booting default image"
+msgstr "Viive ennen oletusjärjestelmän käynnistystä"
+
+#: ../draklive-install:596
+#, c-format
+msgid "Disable UUID"
+msgstr ""
+
+#: ../draklive-install:601
+#, c-format
+msgid "Please wait while Grub2 is being installed..."
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Warning"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Failed to update Grub2 configuration:"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Continuing with default settings."
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Failed to prepare chroot for installing Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:626 ../draklive-install:638
+#, c-format
+msgid "Output log"
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Mount commands output"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Failed to install Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Grub2 installation output"
+msgstr ""
+
+#: ../draklive-install:660
+#, c-format
+msgid "Please wait while initrd is prepared"
+msgstr ""
+
+#: ../draklive-install:670
+#, fuzzy, c-format
+msgid "Unable to copy initrd.img  to new /boot directory"
+msgstr "Tiedostoja ei voida kopioida uuteen juureen"
+
+#: ../draklive-install:674
+#, c-format
+msgid "initrd.img has been created"
+msgstr ""
+
+#: ../draklive-install:706
+#, c-format
+msgid ""
+"Please halt your computer, remove your live system, and restart your "
+"computer."
+msgstr ""
+"Pysäytä järjestelmä, poista Live-media ja käynnistä tietokone uudelleen."
+
+#: ../draklive-install:708
+#, c-format
+msgid ""
+"Your VNC connection will be dropped. Please reconnect after the computer is "
+"restarted."
+msgstr ""
+
+#: ../draklive-install:715
+#, c-format
+msgid "Congratulations"
+msgstr "Onnittelut"
+
+#: ../draklive-install:721
+#, c-format
+msgid "Finish"
+msgstr "Valmis"
+
+#: ../draklive-install:744
+#, c-format
+msgid "Continue anyway?"
+msgstr "Jatka joka tapauksessa?"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without saving"
+msgstr "Lopeta tallentamatta"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without writing the partition table?"
+msgstr "Lopeta kirjoittamatta osiotaulua?"
+
+#: ../draklive-install:755
+#, c-format
+msgid "Do you want to save /etc/fstab modifications"
+msgstr "Tallennetaanko muutokset tiedostoon /etc/fstab"
+
+#: ../draklive-install:762
+#, c-format
+msgid "You need to reboot for the partition table modifications to take place"
+msgstr ""
+"Järjestelmä tulee käynnistää uudelleen, jotta muutokset tulevat voimaan"
+
+#: ../draklive-install:767
+#, c-format
+msgid ""
+"You should format partition %s.\n"
+"Otherwise no entry for mount point %s will be written in fstab.\n"
+"Quit anyway?"
+msgstr ""
+"Osio %s tulisi alustaa.\n"
+"Muuten tiedostoon /etc/fstab ei kirjoiteta\n"
+"tietuetta liitospisteelle %s.\n"
+"Lopeta joka tapauksessa?"
+
+#: ../openmandriva-draklive-install.desktop.in.h:1
+msgid "Live Install"
+msgstr "Asenna OpenMandriva Lx"
+
+#: ../openmandriva-draklive-install.desktop.in.h:2
+msgid "Install your OpenMandriva Lx live system to disk"
+msgstr "Asenna OpenMandriva Lx Live -järjestelmä kiintolevylle"
+
+#: ../draklive-install.desktop.in.h:1
+msgid "Install on Hard Disk"
+msgstr "Asenna kiintolevylle"
+
+#~ msgid "Computing total size"
+#~ msgstr "Lasketaan kokonaiskoko"

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+CMD=/usr/sbin/draklive-install
+
+/bin/systemctl stop udisksd2.service
+# run without hal lock if it fails
+[ "$?" != 0 ] && $CMD
+

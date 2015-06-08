@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/usr/bin/draklive-install-lock-storage
+Icon=live-install-icon
+Terminal=false
+Type=Application
+StartupNotify=true
+_Name=Install on Hard Disk

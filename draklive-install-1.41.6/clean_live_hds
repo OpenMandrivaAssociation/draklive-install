@@ -1,0 +1,16 @@
+#fix bug with dd created flash and /media record in fstab
+ sed -i '/media/d' /mnt/install/etc/fstab
+
+#delete mtab from installed system (it's wrong) and replace it for symlink
+rm -f /mnt/install/etc/mtab
+cd /mnt/install/etc
+ln -s /proc/self/mounts ./mtab
+
+#delete /mnt/install/mnt/install (ugly recursive) 
+ umount -lf /mnt/install/sys
+ umount -lf /mnt/install/proc
+ umount -lf /mnt/install/dev
+ rm -rf /mnt/install/mnt/install
+
+#delete itsels
+  rm -f /usr/sbin/clean_live_hds

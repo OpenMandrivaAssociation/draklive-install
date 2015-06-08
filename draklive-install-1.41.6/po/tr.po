@@ -1,0 +1,262 @@
+# translation of DrakX-tr.po to Turkish
+# Copyright (C) 2000,2003 Free Software Foundation, Inc.
+# Copyright (c) 2000 ROSA
+# ############################################
+#
+#
+# #############################################
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com> , 1999-2003.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Nazmi Savga <nsavga@doruk.net.tr>,2001.
+# Durmuş Celep <durmusc_tr@yahoo.com>,2002.
+# Erçin EKER <erc.caldera@gmx.net>, 2003.
+# Atilla ÖNTAŞ <atilla_ontas@mandriva.org>, 20, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: DrakX-tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-19 20:25+0400\n"
+"PO-Revision-Date: 2010-04-10 03:37+0200\n"
+"Last-Translator: Atilla ÖNTAŞ <atilla_ontas@mandriva.org>\n"
+"Language-Team: Turkish < cooker-i18n@mandrivalinux.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: gtranslator 1.9.5\n"
+
+#: ../draklive-install:84 ../draklive-install:219 ../draklive-install:315
+#: ../draklive-install:396
+#, c-format
+msgid "Please wait"
+msgstr "Lütfen bekleyin"
+
+#: ../draklive-install:122 ../draklive-install:132 ../draklive-install:241
+#: ../draklive-install:257 ../draklive-install:374 ../draklive-install:626
+#: ../draklive-install:638 ../draklive-install:670
+#, c-format
+msgid "Error"
+msgstr "Hata"
+
+#: ../draklive-install:122
+#, c-format
+msgid "Failed to launch post-install setup. It will be started on next boot."
+msgstr ""
+
+#: ../draklive-install:132
+#, c-format
+msgid ""
+"Failed to prepare chroot for post-install setup. Post-install will be "
+"started on next boot."
+msgstr ""
+
+#: ../draklive-install:185
+#, c-format
+msgid "OpenMandriva Lx Live"
+msgstr "OpenMandriva Lx Çalışan CD"
+
+#: ../draklive-install:193
+#, c-format
+msgid "This wizard will help you to install the live distribution."
+msgstr "Bu sihirbaz size çalışan cd kurulumu yapmanızda yardımcı olacaktır."
+
+#: ../draklive-install:257
+#, c-format
+msgid "An error occurred"
+msgstr "Bir hata oluştu"
+
+#: ../draklive-install:293
+#, c-format
+msgid "Not enough space available (%s available while %s are needed)"
+msgstr "Yeterli boş alan yok (%s boş alan var, %s gerekli)"
+
+#: ../draklive-install:348 ../draklive-install:779
+#, c-format
+msgid "Copying in progress"
+msgstr "Kopyalama sürüyor"
+
+#: ../draklive-install:374
+#, c-format
+msgid "Unable to copy files to new root"
+msgstr "Dosyalar yeni köke kopyalanamıyor"
+
+#: ../draklive-install:472
+#, c-format
+msgid " Mb\n"
+msgstr ""
+
+#: ../draklive-install:476
+#, c-format
+msgid " Gb\n"
+msgstr ""
+
+#: ../draklive-install:588
+#, c-format
+msgid "Bootloader main options"
+msgstr "Önyükleyici ana seçenekleri"
+
+#: ../draklive-install:591 ../draklive-install:601
+#, c-format
+msgid "Bootloader"
+msgstr "Önyükleyici"
+
+#: ../draklive-install:592
+#, c-format
+msgid "Boot device"
+msgstr "Önyükleme Aygıtı"
+
+#: ../draklive-install:594
+#, c-format
+msgid "Main options"
+msgstr "Ana Seçenekler"
+
+#: ../draklive-install:595
+#, c-format
+msgid "Delay before booting default image"
+msgstr "Öntanımlı görüntünün yüklenmesinden önceki gecikme"
+
+#: ../draklive-install:596
+#, c-format
+msgid "Disable UUID"
+msgstr ""
+
+#: ../draklive-install:601
+#, c-format
+msgid "Please wait while Grub2 is being installed..."
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Warning"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Failed to update Grub2 configuration:"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Continuing with default settings."
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Failed to prepare chroot for installing Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:626 ../draklive-install:638
+#, c-format
+msgid "Output log"
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Mount commands output"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Failed to install Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Grub2 installation output"
+msgstr ""
+
+#: ../draklive-install:660
+#, c-format
+msgid "Please wait while initrd is prepared"
+msgstr ""
+
+#: ../draklive-install:670
+#, fuzzy, c-format
+msgid "Unable to copy initrd.img  to new /boot directory"
+msgstr "Dosyalar yeni köke kopyalanamıyor"
+
+#: ../draklive-install:674
+#, c-format
+msgid "initrd.img has been created"
+msgstr ""
+
+#: ../draklive-install:706
+#, c-format
+msgid ""
+"Please halt your computer, remove your live system, and restart your "
+"computer."
+msgstr ""
+"Lütfen bilgisayarınızı durdurunuz. Çalışan CD sistemi çıkartıp yeniden "
+"başlatınız."
+
+#: ../draklive-install:708
+#, c-format
+msgid ""
+"Your VNC connection will be dropped. Please reconnect after the computer is "
+"restarted."
+msgstr ""
+
+#: ../draklive-install:715
+#, c-format
+msgid "Congratulations"
+msgstr "Tebrikler"
+
+#: ../draklive-install:721
+#, c-format
+msgid "Finish"
+msgstr "Bitti"
+
+#: ../draklive-install:744
+#, c-format
+msgid "Continue anyway?"
+msgstr "Yine de devam edilsin mi?"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without saving"
+msgstr "Kaydetmeden çıkış yap"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without writing the partition table?"
+msgstr "Bölümlendirme tablosunu kaydetmeden mi çıkıyorsunuz?"
+
+#: ../draklive-install:755
+#, c-format
+msgid "Do you want to save /etc/fstab modifications"
+msgstr "/etc/fstab değişikliklerini kaydetmek istiyor musunuz ?"
+
+#: ../draklive-install:762
+#, c-format
+msgid "You need to reboot for the partition table modifications to take place"
+msgstr ""
+"Bölümlendirme tablosundaki değişikliklerin geçerli olması için makinenizi "
+"yeniden başlatmalısınız."
+
+#: ../draklive-install:767
+#, c-format
+msgid ""
+"You should format partition %s.\n"
+"Otherwise no entry for mount point %s will be written in fstab.\n"
+"Quit anyway?"
+msgstr ""
+"%s bölümü silinmeli\n"
+"Aksi halde fstab içerisine %s bağlantı noktası eklenmeyecek.\n"
+"Yine de çıkmak istiyor musunuz?"
+
+#: ../openmandriva-draklive-install.desktop.in.h:1
+msgid "Live Install"
+msgstr "Çalışan CD Yükleme"
+
+#: ../openmandriva-draklive-install.desktop.in.h:2
+msgid "Install your OpenMandriva Lx live system to disk"
+msgstr "OpenMandriva Lx Çalışan CD sisteminizi diske yükleyin"
+
+#: ../draklive-install.desktop.in.h:1
+msgid "Install on Hard Disk"
+msgstr "Sabit diske kur"
+
+#~ msgid "Computing total size"
+#~ msgstr "Toplam boyut hesaplanıyor"

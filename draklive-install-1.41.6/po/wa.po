@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2000 Free Software Foundation, Inc.
+# Pablo Saratxaga <pablo@mandriva.com>, 2000,2002,2003,2004.
+# Lorint Hendschel <lorinthendschel@skynet.be>, 2002.
+# Lucyin Mahin <lucyin@walon.org>, 2002,2003,2005.
+# Pablo Saratxaga <pablo@walon.org>, 2003, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DrakX\n"
+"POT-Creation-Date: 2014-03-19 20:25+0400\n"
+"PO-Revision-Date: 2005-02-24 21:42+0100\n"
+"Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: KBabel 1.0.2\n"
+
+#: ../draklive-install:84 ../draklive-install:219 ../draklive-install:315
+#: ../draklive-install:396
+#, c-format
+msgid "Please wait"
+msgstr "Tårdjîz on pô, s' i vs plait"
+
+#: ../draklive-install:122 ../draklive-install:132 ../draklive-install:241
+#: ../draklive-install:257 ../draklive-install:374 ../draklive-install:626
+#: ../draklive-install:638 ../draklive-install:670
+#, c-format
+msgid "Error"
+msgstr "Aroke"
+
+#: ../draklive-install:122
+#, c-format
+msgid "Failed to launch post-install setup. It will be started on next boot."
+msgstr ""
+
+#: ../draklive-install:132
+#, c-format
+msgid ""
+"Failed to prepare chroot for post-install setup. Post-install will be "
+"started on next boot."
+msgstr ""
+
+#: ../draklive-install:185
+#, c-format
+msgid "OpenMandriva Lx Live"
+msgstr "OpenMandriva Lx Live"
+
+#: ../draklive-install:193
+#, c-format
+msgid "This wizard will help you to install the live distribution."
+msgstr "Ci macrea chal vos aidrè po-z astaler l' distribucion «OpenMandriva Lx Live»."
+
+#: ../draklive-install:257
+#, c-format
+msgid "An error occurred"
+msgstr "Dj' aroke so ene sacwè"
+
+#: ../draklive-install:293
+#, c-format
+msgid "Not enough space available (%s available while %s are needed)"
+msgstr ""
+
+#: ../draklive-install:348 ../draklive-install:779
+#, c-format
+msgid "Copying in progress"
+msgstr "Dji copeye..."
+
+#: ../draklive-install:374
+#, c-format
+msgid "Unable to copy files to new root"
+msgstr ""
+
+#: ../draklive-install:472
+#, c-format
+msgid " Mb\n"
+msgstr ""
+
+#: ../draklive-install:476
+#, c-format
+msgid " Gb\n"
+msgstr ""
+
+#: ../draklive-install:588
+#, c-format
+msgid "Bootloader main options"
+msgstr "Mwaissès tchuzes di l' enondrece"
+
+#: ../draklive-install:591 ../draklive-install:601
+#, c-format
+msgid "Bootloader"
+msgstr "Enondrece"
+
+#: ../draklive-install:592
+#, c-format
+msgid "Boot device"
+msgstr "Éndjin d' enondaedje"
+
+#: ../draklive-install:594
+#, c-format
+msgid "Main options"
+msgstr "Mwaissès tchuzes"
+
+#: ../draklive-install:595
+#, c-format
+msgid "Delay before booting default image"
+msgstr "Tins divant d' enonder li prémetowe imådje"
+
+#: ../draklive-install:596
+#, c-format
+msgid "Disable UUID"
+msgstr ""
+
+#: ../draklive-install:601
+#, c-format
+msgid "Please wait while Grub2 is being installed..."
+msgstr ""
+
+#: ../draklive-install:610
+#, fuzzy, c-format
+msgid "Warning"
+msgstr "Pårtixhaedje"
+
+#: ../draklive-install:610
+#, c-format
+msgid "Failed to update Grub2 configuration:"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Continuing with default settings."
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Failed to prepare chroot for installing Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:626 ../draklive-install:638
+#, c-format
+msgid "Output log"
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Mount commands output"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Failed to install Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Grub2 installation output"
+msgstr ""
+
+#: ../draklive-install:660
+#, c-format
+msgid "Please wait while initrd is prepared"
+msgstr ""
+
+#: ../draklive-install:670
+#, c-format
+msgid "Unable to copy initrd.img  to new /boot directory"
+msgstr ""
+
+#: ../draklive-install:674
+#, c-format
+msgid "initrd.img has been created"
+msgstr ""
+
+#: ../draklive-install:706
+#, c-format
+msgid ""
+"Please halt your computer, remove your live system, and restart your "
+"computer."
+msgstr ""
+"S' i vs plait arestez l' copiutrece, bodjîz vosse sistinme «live» et poy "
+"renondez l' copiutrece."
+
+#: ../draklive-install:708
+#, c-format
+msgid ""
+"Your VNC connection will be dropped. Please reconnect after the computer is "
+"restarted."
+msgstr ""
+
+#: ../draklive-install:715
+#, c-format
+msgid "Congratulations"
+msgstr "Complumints"
+
+#: ../draklive-install:721
+#, c-format
+msgid "Finish"
+msgstr "Fini"
+
+#: ../draklive-install:744
+#, c-format
+msgid "Continue anyway?"
+msgstr "Voloz vs vormint continouwer?"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without saving"
+msgstr "Cwiter sins schaper"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without writing the partition table?"
+msgstr "Moussî foû sins scrire li tåvlea di pårtixhaedje?"
+
+#: ../draklive-install:755
+#, c-format
+msgid "Do you want to save /etc/fstab modifications"
+msgstr "Voloz vs wårder les candjmints di /etc/fstab ?"
+
+#: ../draklive-install:762
+#, c-format
+msgid "You need to reboot for the partition table modifications to take place"
+msgstr "Vos dvoz renonder voste éndjole po vosse tåvlea di pårtixhaedje candjî"
+
+#: ../draklive-install:767
+#, c-format
+msgid ""
+"You should format partition %s.\n"
+"Otherwise no entry for mount point %s will be written in fstab.\n"
+"Quit anyway?"
+msgstr ""
+"Vos dvrîz abwesner l' pårticion %s.\n"
+"Sins cwè, i n' årè nole intrêye pol pont d' montaedje %s ki srè scrît e "
+"fitchî fstab.\n"
+"Cwiter tot l' minme?"
+
+#: ../openmandriva-draklive-install.desktop.in.h:1
+msgid "Live Install"
+msgstr ""
+
+#: ../openmandriva-draklive-install.desktop.in.h:2
+msgid "Install your OpenMandriva Lx live system to disk"
+msgstr ""
+
+#: ../draklive-install.desktop.in.h:1
+msgid "Install on Hard Disk"
+msgstr ""
+
+#~ msgid "Computing total size"
+#~ msgstr "Cårculant l' grandeu totåle"
+
+#~ msgid "Choose the partitions you want to format"
+#~ msgstr "Tchoezixhoz les pårticions a abwesner"
+
+#~ msgid "Check bad blocks?"
+#~ msgstr "Verifyî s' i gn a des bloks di måvas?"
+
+#~ msgid ""
+#~ "Failed to check filesystem %s. Do you want to repair the errors? (beware, "
+#~ "you can lose data)"
+#~ msgstr ""
+#~ "Dji n' a savou verifyî li sistinme di fitchîs %s. Voloz vs sayî di "
+#~ "coridjî les arokes? (atincion ki çoula pout vs fé piede des dnêyes)"
+
+#~ msgid "Not enough swap space to fulfill installation, please add some"
+#~ msgstr ""
+#~ "Li swap n' est nén grande assez po l' astalaedje: vos e dvoz radjouter."
+
+#~ msgid "No partition available"
+#~ msgstr "nole pårticion di disponibe"
+
+#~ msgid "Scanning partitions to find mount points"
+#~ msgstr "Dji louke ezès pårticions po trover les ponts di montaedje"
+
+#~ msgid "Choose the mount points"
+#~ msgstr "Tchoezixhoz les ponts di montaedje"
+
+#~ msgid "Duplicate mount point %s"
+#~ msgstr "Vos avoz deus côps li pont d' montaedje %s"
+
+#~ msgid ""
+#~ "Some hardware on your computer needs ``proprietary'' drivers to work.\n"
+#~ "You can find some information about them at: %s"
+#~ msgstr ""
+#~ "Vos avoz di l' éndjolreye k' a mezåjhe di mineus «prôpietaire» po roter\n"
+#~ "Vos trovroz di l' informåcion so zels so: %s"
+
+#~ msgid ""
+#~ "You must have a root partition.\n"
+#~ "For this, create a partition (or click on an existing one).\n"
+#~ "Then choose action ``Mount point'' and set it to `/'"
+#~ msgstr ""
+#~ "Vos dvoz aveur ene pårticion raecene.\n"
+#~ "Po çoula, fijhoz ene pårticion (ou clitchîz so ene ki egzistêye dedja).\n"
+#~ "Et poy tchoezixhoz «Pont di montaedje» et metoz lu come «/»"
+
+#~ msgid ""
+#~ "You do not have a swap partition.\n"
+#~ "\n"
+#~ "Continue anyway?"
+#~ msgstr ""
+#~ "Vos n' avoz nole pårticion di swap\n"
+#~ "\n"
+#~ "Voloz vs vormint continouwer?"
+
+#~ msgid "You must have a FAT partition mounted in /boot/efi"
+#~ msgstr "Vos dvoz aveur ene pårticion FAT montêye so /boot/efi"
+
+#~ msgid "Use free space"
+#~ msgstr "Eployî l' plaece libe"
+
+#~ msgid "Not enough free space to allocate new partitions"
+#~ msgstr "Nén del plaece libe assez po fé des noveles pårticions"
+
+#~ msgid "Use existing partitions"
+#~ msgstr "Eployî les pårticions k' i gn a"
+
+#~ msgid "There is no existing partition to use"
+#~ msgstr "I gn a nén des pårticions po-z eployî"
+
+#~ msgid "Use the Windows partition for loopback"
+#~ msgstr "Eployî li pårticion Windows pol loopback"
+
+#~ msgid "Which partition do you want to use for Linux4Win?"
+#~ msgstr "Kéne pårticion voloz vs eployî po-z î mete Linux4win?"
+
+#~ msgid "Choose the sizes"
+#~ msgstr "Tchoezixhoz les grandeus"
+
+#~ msgid "Root partition size in MB: "
+#~ msgstr "Grandeu del pårticion raecene e Mo: "
+
+#~ msgid "Swap partition size in MB: "
+#~ msgstr "Grandeu del pårticion di swap e Mo: "
+
+#~ msgid ""
+#~ "There is no FAT partition to use as loopback (or not enough space left)"
+#~ msgstr ""
+#~ "I gn a pont di pårticions FAT po-z eployî pol loopback (oudonbén i "
+#~ "n' resse nén del plaece assez)"
+
+#~ msgid "Use the free space on the Windows partition"
+#~ msgstr "Eployî l' plaece libe sol pårticion Windows"
+
+#~ msgid "Which partition do you want to resize?"
+#~ msgstr "Kéne pårticion voloz vs candjî si grandeu?"
+
+#~ msgid ""
+#~ "The FAT resizer is unable to handle your partition, \n"
+#~ "the following error occurred: %s"
+#~ msgstr ""
+#~ "Li candjmint di grandeu di vosse pårticion FAT n' a nén stî, \n"
+#~ "a cåze di l' aroke shuvante: %s"
+
+#~ msgid "Resizing"
+#~ msgstr "Dji candje li grandeu"
+
+#~ msgid "Computing the size of the Windows partition"
+#~ msgstr "Carculant l' grandeu del pårticion Windows"
+
+#~ msgid ""
+#~ "Your Windows partition is too fragmented. Please reboot your computer "
+#~ "under Windows, run the ``defrag'' utility, then restart the OpenMandriva Lx Linux "
+#~ "installation."
+#~ msgstr ""
+#~ "Vosse pårticion Windows est trop fragmintêye, i fåreut eployî «defrag»"
+
+#~ msgid ""
+#~ "WARNING!\n"
+#~ "\n"
+#~ "DrakX will now resize your Windows partition. Be careful: this\n"
+#~ "operation is dangerous. If you have not already done so, you\n"
+#~ "first need to exit the installation, run \"chkdsk c:\" from a\n"
+#~ "Command Prompt under Windows (beware, running graphical program\n"
+#~ "\"scandisk\" is not enough, be sure to use \"chkdsk\" in a\n"
+#~ "Command Prompt!), optionally run defrag, then restart the\n"
+#~ "installation. You should also backup your data.\n"
+#~ "When sure, press Ok."
+#~ msgstr ""
+#~ "ASTEME!\n"
+#~ "\n"
+#~ "Asteure, DrakX va candjî li grandeu di vosse pårticion Windows.\n"
+#~ "Loukîz a vos: çoula est dandjureu. Si vos n' l' avoz nén co fwait,\n"
+#~ "enondez (so Windows) «chkdsk c:» a pårti del roye di cmande (atincion\n"
+#~ "kel programe grafike «scandisk» c' est nén assez, i vs fåt eployî\n"
+#~ "«chkdsk» sol roye di cmande!), motoit eto enonder «defrag»,\n"
+#~ "et s' fijhoz ene copeye di såvrité di vos dnêyes dvant di renonder \n"
+#~ "l' astalaedje.\n"
+#~ "Cwand vos seroz seur di vos, clitchîz so «'l est bon»."
+
+#~ msgid "Which size do you want to keep for Windows on"
+#~ msgstr "Kéne grandeu voloz vs wårder po Windows sol "
+
+#~ msgid "partition %s"
+#~ msgstr "pårticion %s"
+
+#~ msgid "Resizing Windows partition"
+#~ msgstr "Dji carcule les limites do sistinme di fitchîs di Windows"
+
+#~ msgid "FAT resizing failed: %s"
+#~ msgstr "Li candjmint di grandeu pol pårticion FAT a fwait berwete: %s"
+
+#~ msgid ""
+#~ "To ensure data integrity after resizing the partition(s), \n"
+#~ "filesystem checks will be run on your next boot into Windows(TM)"
+#~ msgstr ""
+#~ "Po-z acertiner ki vos dnêyes sont bén etires après l' candjmint \n"
+#~ "d' grandeu del pårticion, on verifiaedje do sistinme di fitchî serè-st \n"
+#~ "enondé li côp ki vént ki Windows™ serè-st enondé"
+
+#~ msgid "There is no FAT partition to resize (or not enough space left)"
+#~ msgstr ""
+#~ "I gn a pont di pårticions FAT po candjî leu grandeu  (oudonbén i n' resse "
+#~ "nén del plaece assez)"
+
+#~ msgid "Remove Windows(TM)"
+#~ msgstr "Bodjî Windows™ foû"
+
+#~ msgid "Erase and use entire disk"
+#~ msgstr "Disfacer ey eployî l' plake etire"
+
+#~ msgid ""
+#~ "You have more than one hard drive, which one do you install linux on?"
+#~ msgstr "Vos avoz pus d' ene deure plake, sol kéne voloz vs astaler Linux?"
+
+#~ msgid "ALL existing partitions and their data will be lost on drive %s"
+#~ msgstr ""
+#~ "TOTES les pårticions et totes les dnêyes å dvins vont esse pierdowes sol "
+#~ "deure plake %s"
+
+#~ msgid "Custom disk partitioning"
+#~ msgstr "Pårtixhaedje da vosse del deure plake"
+
+#~ msgid "Use fdisk"
+#~ msgstr "Eployî fdisk"
+
+#~ msgid ""
+#~ "You can now partition %s.\n"
+#~ "When you are done, do not forget to save using `w'"
+#~ msgstr ""
+#~ "Asteure vos poloz pårti vosse deure plake %s\n"
+#~ "Cwand vos åroz fini, ni rovyîz nén di schaper avou «w»"
+
+#~ msgid "I can not find any room for installing"
+#~ msgstr "Dji n' a savou trover del plaece po l' astalåcion"
+
+#~ msgid "The DrakX Partitioning wizard found the following solutions:"
+#~ msgstr "Li Macrea di Pårtixhaedje di DrakX a trové les solucions shuvantes:"
+
+#~ msgid "Partitioning failed: %s"
+#~ msgstr "Li pårtixhaedje n' a nén stî: %s"
+
+#~ msgid "Bringing up the network"
+#~ msgstr "Metant li rantoele en alaedje"
+
+#~ msgid "Bringing down the network"
+#~ msgstr "Dj' arestêye li rantoele"
+
+#~ msgid "none"
+#~ msgstr "nouk"

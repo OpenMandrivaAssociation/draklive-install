@@ -1,0 +1,264 @@
+# translation of pt_BR.po to Brazilian portuguese
+# translation of pt_BR.po to
+# tradução de DrakX-pt_BR.po para Português do Brasil
+# DRAKX PT_BR PO FILE
+# Copyright (C) 2003, 2004, 2005, 2009 Free Software Foundation, Inc.
+# Lisiane Sztoltz Teixeira <lisiane@mandriva.com>
+#
+# Andrei Bosco Bezerra Torres <andrei_bosco@yahoo.com.br>, 2000, 2003.
+# Bruno Dorfman Buys <brunobuys@zipmail.com.br>, 2002.
+# Tiago da Cruz Bezerra <tiagocruz18@uol.com.br>,2002 2003, 2004.
+# Ricardo de Castilho <cast_brasil@ig.com.br>, 2003.
+# Carlinhos Cecconi <carlinux@terra.com.br>, 2003, 2004.
+# Deivi Lopes Kuhn <deivikuhn@yahoo.com.br>, 2003, 2004.
+# Cristiano Otto Von Trompczynski <cris@mandriva.com>, 2005.
+# Arthur R. Mello <renato@conectiva.com.br>, 2005.
+# Arthur Renato Mello <renato@conectiva.com.br>, 2005.
+# Sergio Rafael Lemke <sergio@mandriva.com.br>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"POT-Creation-Date: 2014-03-19 20:25+0400\n"
+"PO-Revision-Date: 2010-04-12 12:18-0300\n"
+"Last-Translator: Sergio Rafael Lemke <sergio@mandriva.com.br>\n"
+"Language-Team: Brazilian Portuguese <cooker-i18n@mandrivalinux.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../draklive-install:84 ../draklive-install:219 ../draklive-install:315
+#: ../draklive-install:396
+#, c-format
+msgid "Please wait"
+msgstr "Aguarde..."
+
+#: ../draklive-install:122 ../draklive-install:132 ../draklive-install:241
+#: ../draklive-install:257 ../draklive-install:374 ../draklive-install:626
+#: ../draklive-install:638 ../draklive-install:670
+#, c-format
+msgid "Error"
+msgstr "Erro"
+
+#: ../draklive-install:122
+#, c-format
+msgid "Failed to launch post-install setup. It will be started on next boot."
+msgstr ""
+
+#: ../draklive-install:132
+#, c-format
+msgid ""
+"Failed to prepare chroot for post-install setup. Post-install will be "
+"started on next boot."
+msgstr ""
+
+#: ../draklive-install:185
+#, c-format
+msgid "OpenMandriva Lx Live"
+msgstr "OpenMandriva Lx Live"
+
+#: ../draklive-install:193
+#, c-format
+msgid "This wizard will help you to install the live distribution."
+msgstr "Este assistente vai lhe ajudar a instalar a distribuição live."
+
+#: ../draklive-install:257
+#, c-format
+msgid "An error occurred"
+msgstr "Ocorreu um erro"
+
+#: ../draklive-install:293
+#, c-format
+msgid "Not enough space available (%s available while %s are needed)"
+msgstr ""
+"Sem espaço suficiente disponível (%s disponíveis mas %s são necessários)"
+
+#: ../draklive-install:348 ../draklive-install:779
+#, c-format
+msgid "Copying in progress"
+msgstr "Cópia em progresso..."
+
+#: ../draklive-install:374
+#, c-format
+msgid "Unable to copy files to new root"
+msgstr "Não foi possível copiar os arquivos para a nova raiz"
+
+#: ../draklive-install:472
+#, c-format
+msgid " Mb\n"
+msgstr ""
+
+#: ../draklive-install:476
+#, c-format
+msgid " Gb\n"
+msgstr ""
+
+#: ../draklive-install:588
+#, c-format
+msgid "Bootloader main options"
+msgstr "Principais opções do gerenciador de inicialização"
+
+#: ../draklive-install:591 ../draklive-install:601
+#, c-format
+msgid "Bootloader"
+msgstr "Inicialização"
+
+#: ../draklive-install:592
+#, c-format
+msgid "Boot device"
+msgstr "Dispositivo de boot"
+
+#: ../draklive-install:594
+#, c-format
+msgid "Main options"
+msgstr "Opções principais"
+
+#: ../draklive-install:595
+#, c-format
+msgid "Delay before booting default image"
+msgstr "Tempo antes de iniciar a imagem padrão"
+
+#: ../draklive-install:596
+#, c-format
+msgid "Disable UUID"
+msgstr ""
+
+#: ../draklive-install:601
+#, c-format
+msgid "Please wait while Grub2 is being installed..."
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Warning"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Failed to update Grub2 configuration:"
+msgstr ""
+
+#: ../draklive-install:610
+#, c-format
+msgid "Continuing with default settings."
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Failed to prepare chroot for installing Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:626 ../draklive-install:638
+#, c-format
+msgid "Output log"
+msgstr ""
+
+#: ../draklive-install:626
+#, c-format
+msgid "Mount commands output"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Failed to install Grub2. Try again?"
+msgstr ""
+
+#: ../draklive-install:638
+#, c-format
+msgid "Grub2 installation output"
+msgstr ""
+
+#: ../draklive-install:660
+#, c-format
+msgid "Please wait while initrd is prepared"
+msgstr ""
+
+#: ../draklive-install:670
+#, fuzzy, c-format
+msgid "Unable to copy initrd.img  to new /boot directory"
+msgstr "Não foi possível copiar os arquivos para a nova raiz"
+
+#: ../draklive-install:674
+#, c-format
+msgid "initrd.img has been created"
+msgstr ""
+
+#: ../draklive-install:706
+#, c-format
+msgid ""
+"Please halt your computer, remove your live system, and restart your "
+"computer."
+msgstr "Por favor, desligue o computador, remova o CD OpenMandriva Lx Live e reinicie."
+
+#: ../draklive-install:708
+#, c-format
+msgid ""
+"Your VNC connection will be dropped. Please reconnect after the computer is "
+"restarted."
+msgstr ""
+
+#: ../draklive-install:715
+#, c-format
+msgid "Congratulations"
+msgstr "Parabéns"
+
+#: ../draklive-install:721
+#, c-format
+msgid "Finish"
+msgstr "Terminar"
+
+#: ../draklive-install:744
+#, c-format
+msgid "Continue anyway?"
+msgstr "Continuar Mesmo Assim ?"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without saving"
+msgstr "Sair sem salvar"
+
+#: ../draklive-install:749
+#, c-format
+msgid "Quit without writing the partition table?"
+msgstr "Sair sem gravar a tabela de partições ?"
+
+#: ../draklive-install:755
+#, c-format
+msgid "Do you want to save /etc/fstab modifications"
+msgstr "Você quer salvar as modificações em /etc/fstab ?"
+
+#: ../draklive-install:762
+#, c-format
+msgid "You need to reboot for the partition table modifications to take place"
+msgstr ""
+"Você precisa reiniciar o computador para que as modificações na tabela de "
+"partições entre em vigor"
+
+#: ../draklive-install:767
+#, c-format
+msgid ""
+"You should format partition %s.\n"
+"Otherwise no entry for mount point %s will be written in fstab.\n"
+"Quit anyway?"
+msgstr ""
+"Você deve formatar a partição %s.\n"
+"Caso contrário, nenhuma entrada para o ponto de montagem %s será gravada em "
+"fstab.\n"
+"Sair mesmo assim ?"
+
+#: ../openmandriva-draklive-install.desktop.in.h:1
+msgid "Live Install"
+msgstr "Instalador Live"
+
+#: ../openmandriva-draklive-install.desktop.in.h:2
+msgid "Install your OpenMandriva Lx live system to disk"
+msgstr "Instalar seu sistema OpenMandriva Lx live para o HD"
+
+#: ../draklive-install.desktop.in.h:1
+msgid "Install on Hard Disk"
+msgstr "Instalar no Disco Rígido"
+
+#~ msgid "Computing total size"
+#~ msgstr "Calculando tamanho total..."
