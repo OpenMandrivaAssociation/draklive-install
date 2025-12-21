@@ -13,6 +13,7 @@ Source2:	draklive-install.service
 Source3:	draklive-install-setup
 Source4:	draklive-install-start
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	systemd-units
 Requires:	drakxtools >= 14.43
